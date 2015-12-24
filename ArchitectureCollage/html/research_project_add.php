@@ -107,9 +107,10 @@
           </div>
           <div id="status1">
             <?php 
-                 include_once("../php/connect.php"); 
                  session_start();
-                 $loginNumber = $_SESSION["temp"][0];
+                 include_once("../php/connect.php"); 
+                 include_once("../php/state_test.php"); 
+                 $loginNumber = $_SESSION["id"];
                  header("Content-type: text/html; charset:utf-8");                 
                  $mysqli->query("set names 'utf8'");
 
@@ -140,12 +141,17 @@
         <div id="main-content">
           <div id="sider">
             <ul>
-               <li class="now_li"><a class="a_sider a_now" href="#"  >科研项目</a></li>
+               <li class="now_li"><a class="a_sider a_now" href="research_project.php"  >科研项目</a></li>
            
             </ul>
           </div>
           <div id="right-text">
-           <div class="data_add"><a href="research_project.php"><数据查询</a></div>
+
+           <div class="data_add">
+
+          <a href="research_project.php" id="tab_fir" >数据查询</a>
+            <a class="tab_now" href="research_project_add.php" id="tab_sec">数据管理</a>
+          </div>
             <div class="table_input_area">
               <fieldset>
               <form id="add_form"  method="post"  action="#"  enctype="multipart/form-data">

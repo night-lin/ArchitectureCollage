@@ -19,7 +19,7 @@
 		 	$ok=1;
 		 	
 		 }
-		 echo $ok;
+		 //echo $ok;
 		 echo"<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
 	     echo"
 	          <script>alert('删除成功！,共删除".$i."条数据');

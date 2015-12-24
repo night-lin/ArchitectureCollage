@@ -2,7 +2,7 @@
 include_once("connect.php");
 session_start();
 $name = $_POST["login-user"];
-$_SESSION["temp"][0]=$name;
+$_SESSION["id"]=$name;
 $pwd = $_POST["login-password"];
 $jud = 0;
 	echo"<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
