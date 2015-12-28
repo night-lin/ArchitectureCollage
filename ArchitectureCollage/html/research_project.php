@@ -86,7 +86,7 @@
                   }
                 
             ?>
-            <a class="a_exit" href="index.php">退出系统</a>
+            <a class="a_exit" href="../">退出系统</a>
             <p class="to_remind">欢迎您，<span>
               <?php  
                echo $name;

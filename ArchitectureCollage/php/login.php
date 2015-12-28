@@ -22,7 +22,7 @@ $jud = 0;
 		{
 			echo"
             <script>alert('账号或密码错误');
-            window.location.href='../html/index.php'</script>";
+            window.location.href='../index.php'</script>";
 		}
 
 	}
