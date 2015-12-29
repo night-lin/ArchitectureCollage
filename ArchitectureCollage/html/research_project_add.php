@@ -108,10 +108,8 @@
        $(window).resize(function(){
           setSize();
        });
-        function setSize() {
-            //var height1 = $("#bgConsure").height();              
+        function setSize() {           
             var width1 = $("#main-content").width();
-            //var width11 = parseInt(width1);
             var width_status = parseInt(width1) - 220;           
             $("#right-text").css('width',width_status);
              $("#status1").css('width',width_status);

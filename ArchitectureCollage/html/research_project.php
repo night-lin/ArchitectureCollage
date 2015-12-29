@@ -69,11 +69,12 @@
        });
         function setSize() {  
             var width1 = $("#main-content").width();
-            var width_status = parseInt(width1) - 220;                  
+            var width_status = parseInt(width1) - 220;           
             $("#right-text").css('width',width_status);
              $("#status1").css('width',width_status);
           
-            //主体高度满屏
+
+              //主体高度满屏
             var window_height = $(window).height();
             var main_height = parseInt(window_height)-120;
             $("#main-content").css('min-height',main_height);
@@ -81,9 +82,10 @@
             var body_height = $("body").height();
             var sider_height = parseInt(body_height)-80;
             $("#sider").css('min-height',sider_height);
-           var foot_height = parseInt($(window).height()) - main_height-60;
+            var foot_height = parseInt($(window).height()) - main_height-60;
             //alert(foot_height);
             $("#footer").css('min-height',foot_height);
+            
             
         }   
     </script> 
@@ -457,7 +459,7 @@
   </div>
  </div>
   <div id ="footer">
-    <p>Designed by Code.R</p>
+   Designed by Lin
   </div>
  </body>
 </html>
