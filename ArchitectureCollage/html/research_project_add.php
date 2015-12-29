@@ -171,7 +171,7 @@
           <div id="sider">
            <ul class="sider_ul_1">
                 
-                   <li class="now_li sider_li_1"><img scr="../image/item.png" width="40">科研项目</li>
+                   <li class="now_li sider_li_1"><img src="../image/item.png" width="40">科研项目</li>
                       <ul class="sider_ul_2">
                         <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
                         <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project_add.php">数据管理</a></li>
@@ -179,43 +179,44 @@
                       </ul>
                  
               
-               <li class="sider_li_1">论文发表</li>
+                
+               <li class="sider_li_1"><img src="../image/thesis.png" width="40">论文发表</li>
                     <ul class="sider_ul_2">
                       <li class="sider_li_2"><a href="#">数据管理</a></li>
                       <li class="sider_li_2"><a href="#">数据导入</a></li>
                     </ul>
                
-              <li class="sider_li_1">专利情况</li>
+              <li class="sider_li_1"><img src="../image/patent.png" width="40">专利情况</li>
                     <ul class="sider_ul_2">
                       <li class="sider_li_2"><a href="#">数据管理</a></li>
                       <li class="sider_li_2"><a href="#">数据导入</a></li>
                     </ul>
                
-               <li class="sider_li_1">学术专著 </li>
+               <li class="sider_li_1"><img src="../image/book.png" width="40">学术专著</li>
                     <ul class="sider_ul_2">
                       <li class="sider_li_2"><a href="#">数据管理</a></li>
                       <li class="sider_li_2"><a href="#">数据导入</a></li>
                     </ul>
               
-               <li class="sider_li_1">学术会议</li>
+               <li class="sider_li_1"><img src="../image/meeting.png" width="40">学术会议</li>
                     <ul class="sider_ul_2">
                       <li class="sider_li_2"><a href="#">数据管理</a></li>
                       <li class="sider_li_2"><a href="#">数据导入</a></li>
                     </ul>
                
-               <li class="sider_li_1">科技平台</li>
+               <li class="sider_li_1"><img src="../image/plat.png" width="40">科技平台</li>
                     <ul class="sider_ul_2">
                       <li class="sider_li_2"><a href="#">数据管理</a></li>
                       <li class="sider_li_2"><a href="#">数据导入</a></li>
                     </ul>
                
-               <li class="sider_li_1">获奖情况 </li>
+               <li class="sider_li_1"><img src="../image/award.png" width="40">获奖情况 </li>
                     <ul class="sider_ul_2">
                       <li class="sider_li_2"><a href="#">数据管理</a></li>
                       <li class="sider_li_2"><a href="#">数据导入</a></li>
                     </ul>
               
-               <li class="sider_li_1">学团职务 </li>
+               <li class="sider_li_1"><img src="../image/position.png" width="40">学团职务 </li>
                     <ul class="sider_ul_2">
                       <li class="sider_li_2"><a href="#">数据管理</a></li>
                       <li class="sider_li_2"><a href="#">数据导入</a></li>
@@ -419,7 +420,7 @@
             
             </table>
              <div class="btn-center">
-              <input class="btn btn-danger" type="submit" value="删除所选数据"  >
+              <input class="btn btn-danger"  id= type="submit" value="删除所选数据"  >
              </div>
             </form>
           </br>
