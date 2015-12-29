@@ -171,7 +171,7 @@
           <div id="sider">
            <ul class="sider_ul_1">
                 
-                   <li class="now_li sider_li_1">科研项目</li>
+                   <li class="now_li sider_li_1"><img scr="../image/item.png" width="40">科研项目</li>
                       <ul class="sider_ul_2">
                         <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
                         <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project_add.php">数据管理</a></li>
@@ -288,7 +288,7 @@
                   
                <div style="clear:both;"></div>
                 <div class="btn-center">
-                  <input class="btn btn-success submit"  id="btn-condition" type="submit" value="添加一条数据"  >
+                  <input class="btn btn-success submit"  type="submit" value="添加一条数据"  >
                   </div>
                
           </form>
@@ -419,7 +419,7 @@
             
             </table>
              <div class="btn-center">
-              <input class="btn btn-danger"  id="btn-condition" type="submit" value="删除所选数据"  >
+              <input class="btn btn-danger" type="submit" value="删除所选数据"  >
              </div>
             </form>
           </br>

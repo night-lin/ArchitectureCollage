@@ -13,6 +13,8 @@
 	  <script language="javascript"  src="js/index.js" ></script>
 	  
 	  <script language="javascript"  src="js/jquery.js" ></script>
+	
+
 	  <script type="text/javascript">
 	  $(function(){
    	setSize();
