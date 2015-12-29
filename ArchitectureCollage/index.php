@@ -22,44 +22,54 @@
        		setSize();
        });
         function setSize() {
-            var height1 = $("#bgConsure").height();
-            var height2 = $("#footer").height();
-            var number = parseInt(height1);
-            var right_nav = $("#right-nav").height();
-            var min_height = number - 110;
-             var r_min_height = min_height - right_nav;
-            $("#login-content").css('min-height', min_height);
-            
-            //alert(left);
+
+        	var window_height = $(window).height();
+        	
+
+            var height = $("body").height(); 
+			var width = $("body").width();
+            var min_height = parseInt(height);
+            var min_width = parseInt(width);
+            //alert("left");
+         
+            //$("#bgConsure").css('height', min_height*0.29);
+            $("#login-body").css('height', min_height*0.80);
+            $("#login-head").css('width', min_width*0.32);
+            $("#login-head").css('margin-top', min_height*0.29);
+            var footer_mt =  parseInt(window_height) - parseInt($("#login-area").height)- min_height*0.29;
+           // $("#footer").css('margin-top', footer_mt);
         };
     </script> 
+ 
 </head>
 
 <body>
-
-	<div id="bgConsure" style="position: absolute; z-index: -1px; height: 100%; width: 40px">
-    </div>
-
-	
-		<div id="login-box">
-			<form action="php/login.php" method="post">
-				<div id="login-head">
-					<h3><img src="image/form-logo1.png"></h3>
-				</div>
-				<div class="input-box">
-				<input placeholder="账号:" id="login-user" type="text"   name="login-user" required="required"/>
-				</div>
-				<div class="input-box">
-				<input placeholder="密码:" id="login-pass" type="password"   name="login-password" required="required"/></br>
-				</div>
-				
-				<div class="submit-box">
-	           	 <input type="submit"  class=" btn-success btn-submit" id="sub-login" value="登&nbsp;&nbsp;&nbsp; 录" />
-	           	</div>
-			</form>
-		</div>		
-	<div id="footer">
-    <p>Designed by Code.R</p>
+	<div id="login-body">
 	</div>
+	<div id="bgConsure">
+	</div>
+	<div id="login-area">
+	<div id="login-head">
+		<h3><img src="image/logo2.png"></h3>
+	</div>
+	<div id="login-box">
+		<form action="php/login.php" method="post">
+			<div class="input-box">
+				<input placeholder="工号:" id="login-user" type="text"   name="login-user" required="required"/>
+				</div>
+			
+			<div class="input-box">
+				<input placeholder="密码:" id="login-pass" type="password"   name="login-password" />
+			</div>
+			<div class="submit-box">
+		        <input type="submit"  class="btn-blue btn-default" id="sub-login" value="登&nbsp;&nbsp;&nbsp; 录" />
+		   	</div>
+		</form>
+	</div>
+	</div>		
+	<div id="footer" class="login_foot">
+	Designed by Lin
+	</div>
+	
 </body>
 </html>

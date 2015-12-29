@@ -73,27 +73,63 @@
                  
             });
         </script>
-  
+  <script>
+  //侧边栏菜单
+    $(function(){
+      //$(".sider_li_1").css({"background-color":"#3992d0"});
+     // $(".leftsidebar_box dt img").attr("src","images/select_xl01.png");
+      $(".sider_li_2").hide();
+       $(".menu_chioce").toggle(); 
+      $(".sider_li_1").click(function(){
+        
+        //$(".sider_li_1").css({"background-color":"#3992d0"})
+        //$(this).css({"background-color": "#317eb4"});
+        $(this).next().find('.sider_li_2').removeClass("menu_chioce");
+       // $(".leftsidebar_box dt img").attr("src","images/select_xl01.png");
+       // $(this).parent().find('img').attr("src","images/select_xl.png");
+        $(".menu_chioce").slideUp(); 
+        $(this).next().find('.sider_li_2').slideToggle();
+        $(this).next().find('.sider_li_2').addClass("menu_chioce");
+        $(this).parent().find('.sider_li_1').removeClass("now_li");
+        $(this).addClass("now_li");
+      });
+       $(".sider_li_2").click(function(){
+        $(this).parent().find('.sider_li_2').removeClass("now_li_2");
+        $(this).addClass("now_li_2");
+       });
+    })
+</script>
   <script type="text/javascript">
-   $(function(){
-    setSize();
-   }
-    )
+       window.onload=function(){
+        setSize();
+       }
+        
+
        $(window).resize(function(){
           setSize();
        });
         function setSize() {
             //var height1 = $("#bgConsure").height();              
-            var width1 = $("#background-width").width();
+            var width1 = $("#main-content").width();
             //var width11 = parseInt(width1);
-            var width_status = parseInt(width1) - 220;       
-           
+            var width_status = parseInt(width1) - 220;           
             $("#right-text").css('width',width_status);
-            $("fieldset").css('width',width_status*0.8);
              $("#status1").css('width',width_status);
-            $("#status2").css('width',width_status);
-            //alert(left);
-            // alert(width1);   
+          
+
+              //主体高度满屏
+            var window_height = $(window).height();
+            var main_height = parseInt(window_height)-120;
+            $("#main-content").css('min-height',main_height);
+            //侧边栏高度自适应
+            var body_height = $("body").height();
+            var sider_height = parseInt(body_height)-80;
+            $("#sider").css('min-height',sider_height);
+            var foot_height = parseInt($(window).height()) - main_height-60;
+            //alert(foot_height);
+            $("#footer").css('min-height',foot_height);
+            
+            
         }   
     </script> 
   <link href="../css/base.css" type="text/css" rel="stylesheet"/>
@@ -103,7 +139,7 @@
  <div id="container">
       <div id="head">
           <div id="logo">
-            <img src="../image/logo.png" width="220" height="78">
+              <img src="../image/form-logo.png" width="220" >
           </div>
           <div id="status1">
             <?php 
@@ -131,29 +167,70 @@
             </span>管理员</p>
          
           </div>
-          <div id="status2">
-            
-             <p class="remind">请填写对应条件进行增加或删除数据</p>
-         
-          </div>
 
         </div>
         <div id="main-content">
           <div id="sider">
-            <ul>
-               <li class="now_li"><a class="a_sider a_now" href="research_project.php"  >科研项目</a></li>
+           <ul class="sider_ul_1">
+                
+                   <li class="now_li sider_li_1">科研项目</li>
+                      <ul class="sider_ul_2">
+                        <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
+                        <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="#">数据导入</a></li>
+                      </ul>
+                 
+              
+               <li class="sider_li_1">论文发表</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+              <li class="sider_li_1">专利情况</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+               <li class="sider_li_1">学术专著 </li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+              
+               <li class="sider_li_1">学术会议</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+               <li class="sider_li_1">科技平台</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+               <li class="sider_li_1">获奖情况 </li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+              
+               <li class="sider_li_1">学团职务 </li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+              
            
             </ul>
           </div>
           <div id="right-text">
 
-           <div class="data_add">
-
-          <a href="research_project.php" id="tab_fir" >数据查询</a>
-            <a class="tab_now" href="research_project_add.php" id="tab_sec">数据管理</a>
-          </div>
+          
             <div class="table_input_area">
-              <fieldset>
+             <fieldset>
               <form id="add_form"  method="post"  action="#"  enctype="multipart/form-data">
                 <div class="condition_select">
                    <div class="select_block">
@@ -212,12 +289,13 @@
                </div>   
                   
                <div style="clear:both;"></div>
+                <div class="btn-center">
                   <input class="btn btn-success submit"  id="btn-condition" type="submit" value="添加一条数据"  >
-
+                  </div>
                
           </form>
         </fieldset>
-         <form action="research_project_del.php" method="post">
+         <form action="../php/research_project_del.php" method="post">
           <table class="table_gen" border="1">
           
               <?php
@@ -342,7 +420,9 @@
              
             
             </table>
+             <div class="btn-center">
               <input class="btn btn-danger"  id="btn-condition" type="submit" value="删除所选数据"  >
+             </div>
             </form>
           </br>
             <?php
@@ -354,7 +434,7 @@
   </div>
  </div>
   <div id ="footer">
-    <p>Designed by Code.R</p>
+    Designed by Lin
   </div>
  </body>
 </html>

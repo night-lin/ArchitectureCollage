@@ -9,6 +9,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
   <title>建筑学院管理系统</title>
   <script type="text/javascript" src="../js/jquery.min.js"></script>  
+
+  <script>
+  //侧边栏菜单
+    $(function(){
+      //$(".sider_li_1").css({"background-color":"#3992d0"});
+     // $(".leftsidebar_box dt img").attr("src","images/select_xl01.png");
+      $(".sider_li_2").hide();
+      $(".menu_chioce").toggle(); 
+      $(".sider_li_1").click(function(){
+        $(this).next().find('.sider_li_2').removeClass("menu_chioce");
+        $(".menu_chioce").slideUp(); 
+        $(this).next().find('.sider_li_2').slideToggle();
+        $(this).next().find('.sider_li_2').addClass("menu_chioce");
+        $(this).parent().find('.sider_li_1').removeClass("now_li");
+        $(this).addClass("now_li");
+      });
+       $(".sider_li_2").click(function(){
+        $(this).parent().find('.sider_li_2').removeClass("now_li_2");
+        $(this).addClass("now_li_2");
+       });
+    })
+</script>
   <script type="text/javascript">
     jQuery.fn.rowspan = function(colIdx) { //封装的一个JQuery小插件
     return this.each(function(){
@@ -37,25 +59,32 @@
 </script> 
   
   <script type="text/javascript">
-   $(function(){
-    setSize();
-   }
-    )
+       window.onload=function(){
+        setSize();
+       }
+        
+
        $(window).resize(function(){
           setSize();
        });
-        function setSize() {
-            //var height1 = $("#bgConsure").height();              
-            var width1 = $("#background-width").width();
-            //var width11 = parseInt(width1);
-            var width_status = parseInt(width1) - 220;       
-           
+        function setSize() {  
+            var width1 = $("#main-content").width();
+            var width_status = parseInt(width1) - 220;                  
             $("#right-text").css('width',width_status);
-            $("fieldset").css('width',width_status*0.8);
              $("#status1").css('width',width_status);
-            $("#status2").css('width',width_status);
-            //alert(left);
-            // alert(width1);   
+          
+            //主体高度满屏
+            var window_height = $(window).height();
+            var main_height = parseInt(window_height)-120;
+            $("#main-content").css('min-height',main_height);
+            //侧边栏高度自适应
+            var body_height = $("body").height();
+            var sider_height = parseInt(body_height)-80;
+            $("#sider").css('min-height',sider_height);
+           var foot_height = parseInt($(window).height()) - main_height-60;
+            //alert(foot_height);
+            $("#footer").css('min-height',foot_height);
+            
         }   
     </script> 
   <link href="../css/base.css" type="text/css" rel="stylesheet"/>
@@ -65,7 +94,7 @@
  <div id="container">
       <div id="head">
           <div id="logo">
-            <img src="../image/logo.png" width="220" height="78">
+            <img src="../image/form-logo.png" width="220" >
           </div>
           <div id="status1">
             <?php 
@@ -94,30 +123,72 @@
             </span>管理员</p>
          
           </div>
-          <div id="status2">
-            
-             <p class="remind">请选择相应条件进行查询  </p>
-         
-          </div>
 
         </div>
         <div id="main-content">
           <div id="sider">
-            <ul>
-               <li class="now_li"><a class="a_sider a_now" href="research_project.php"  >科研项目</a></li>
+            <ul class="sider_ul_1">
+                
+                   <li class="now_li sider_li_1">科研项目</li>
+                      <ul class="sider_ul_2">
+                        <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project.php">数据查询</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="research_project_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="#">数据导入</a></li>
+                      </ul>
+                 
+              
+               <li class="sider_li_1">论文发表</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+              <li class="sider_li_1">专利情况</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+               <li class="sider_li_1">学术专著 </li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+              
+               <li class="sider_li_1">学术会议</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+               <li class="sider_li_1">科技平台</li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+               
+               <li class="sider_li_1">获奖情况 </li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+              
+               <li class="sider_li_1">学团职务 </li>
+                    <ul class="sider_ul_2">
+                      <li class="sider_li_2"><a href="#">数据管理</a></li>
+                      <li class="sider_li_2"><a href="#">数据导入</a></li>
+                    </ul>
+              
            
             </ul>
           </div>
-          <div id="right-text">
-            <div class="data_add">
-            <a class="tab_now"  href="research_project.php" id="tab_fir" >数据查询</a>
-            <a href="research_project_add.php" id="tab_sec">数据管理</a>
-          </div>
+          <div id="right-text">            
             <div class="table_input_area">
-              <fieldset>
-              <form  method="post"  action="#"  enctype="multipart/form-data">
-                <div class="condition_select">
-                   <div class="select_block">
+            
+            <fieldset>
+                <form  method="post"  action="#"  enctype="multipart/form-data">
+                  <div class="condition_select">
+                    <div class="select_block">
                       <label>项目类型</label>
                         <select name ="projectType">  
                           <option value ="">所有</option>
@@ -136,48 +207,46 @@
                        <label>起止年限</label>
                       <input type="text" name="projectTime"  >
                      
-                    </div>
-                   
-                </div>
-            
-              <div class="condition_select">
-                <div class="select_block">
-                  <label>下达部门</label>
-                        <input type="text" name="projectDepartment" >
-                </div>
-                <div class="select_block">
-                <label>项目成员</label>
-                  <input type="text" name="projectMember"  >
+                    </div>    
                   </div>
-                <div class="select_block">
-
-                  <label>项目状态</label>
-                  <select name ="projectState">
-                    <option value ="">所有</option>
-                    <option value ="on_serach"> 在研</option>
-                    <option value ="complete">结题</option> 
-                    <option value ="other">其他</option>         
-                  </select>  
-               
-                </div>
-            </div> 
-             <div class="condition_select">
-              <div class="select_block">
-                <label>项目名称</label>
-                  <input type="text" name="projectName" >
-              </div>
-              <div class="select_block">
-                  <label>项目经费</label>
-                  <input type="text" name="projectFunding" >  
+            
+                  <div class="condition_select">
+                     <div class="select_block">
+                          <label>下达部门</label>
+                          <input type="text" name="projectDepartment" >
+                      </div>
+                      <div class="select_block">
+                        <label>项目成员</label>
+                        <input type="text" name="projectMember"  >
+                      </div>
+                     <div class="select_block">
+                        <label>项目状态</label>
+                        <select name ="projectState">
+                          <option value ="">所有</option>
+                          <option value ="on_serach"> 在研</option>
+                          <option value ="complete">结题</option> 
+                          <option value ="other">其他</option>         
+                        </select>     
+                     </div>
+                  </div> 
+                 <div class="condition_select">
+                    <div class="select_block">
+                      <label>项目名称</label>
+                        <input type="text" name="projectName" >
                     </div>
-               </div>   
+                    <div class="select_block">
+                        <label>项目经费</label>
+                        <input type="text" name="projectFunding" >  
+                    </div>
+                </div>   
                   
-               <div style="clear:both;"></div>
-                  <input class="btn btn-success"  id="btn-condition" type="submit" value="提交"  >
-
-               
+              <div style="clear:both;"></div>
+               <div class="btn-center">
+                  <input class="btn btn-success"  id="btn-condition" type="submit" value="提交"  >    
+                </div>
           </form>
-        </fieldset>
+          </fieldset>
+
           <table class="table_gen" border="1">
            
               <?php
@@ -375,14 +444,7 @@
                           }
                          
                       }
-                     
-
-                     
-                     
-                        
-                      
-                      
-                  
+            
               ?>
             </table>
           </br>
