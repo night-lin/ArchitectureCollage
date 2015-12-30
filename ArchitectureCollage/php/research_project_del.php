@@ -1,4 +1,5 @@
 <?php
+
 	 include_once("../php/connect.php");
 	 if(!isset($_POST["delete_data"]))
 	 {
@@ -9,12 +10,14 @@
 	 }
 	 //echo(count($delete_id));
 	 else{
+	 	 $table_name = $_POST["table_name"];
+	 
 	 	 $delete_id = $_POST["delete_data"];
 	 
 		 $ok=0; 
 		 for($i=0;$i<count($delete_id);$i++)
 		 {
-		 	$sql="DELETE FROM research_project WHERE `id`= '$delete_id[$i]'";
+		 	$sql="DELETE FROM $table_name WHERE `id`= '$delete_id[$i]'";
 		 	mysqli_query($mysqli,$sql);
 		 	$ok=1;
 		 	
@@ -23,6 +26,6 @@
 		 echo"<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
 	     echo"
 	          <script>alert('删除成功！,共删除".$i."条数据');
-	          window.location.href='../html/research_project_add.php'</script>";
+	          window.location.href='../html/".$table_name."/".$table_name."_add.php'</script>";
 	      }
 ?>

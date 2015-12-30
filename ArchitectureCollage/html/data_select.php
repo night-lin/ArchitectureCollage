@@ -1,4 +1,4 @@
-<!doctype html>
+<!Doctype html>
 <html lang="en">
  <head>
   <meta charset="UTF-8">
@@ -9,7 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
   <title>建筑学院管理系统</title>
   <script type="text/javascript" src="../js/jquery.min.js"></script>  
+  <script type="text/javascript">
 
+  </script>
   <script>
   //侧边栏菜单
     $(function(){
@@ -30,6 +32,8 @@
         $(this).parent().find('.sider_li_2').removeClass("now_li_2");
         $(this).addClass("now_li_2");
        });
+      
+
     })
 </script>
   <script type="text/javascript">
@@ -101,10 +105,11 @@
           </div>
           <div id="status1">
             <?php 
-             session_start();
+                 session_start();
+                 $_SESSION["menu_item"] = "project_research";
                  include_once("../php/connect.php"); 
                  include_once("../php/state_test.php"); 
-                
+                 SE
                  $loginNumber = $_SESSION["id"];
                  header("Content-type: text/html; charset:utf-8");                 
                  $mysqli->query("set names 'utf8'");
@@ -136,7 +141,7 @@
                       <ul class="sider_ul_2">
                         <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project.php">数据查询</a></li>
                         <li class="sider_li_2 menu_chioce"><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce"><a href="#">数据导入</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="research_project_induce.php">数据导入</a></li>
                       </ul>
                  
               
@@ -195,10 +200,10 @@
                       <label>项目类型</label>
                         <select name ="projectType">  
                           <option value ="">所有</option>
-                          <option value ="country"> 国家级项目</option>
-                          <option value ="province">省部级项目</option>
-                          <option value ="under_province">省部级以下</option>           
-                          <option value ="other">其他</option>           
+                          <option value ="国家级项目"> 国家级项目</option>
+                          <option value ="省部级项目">省部级项目</option>
+                          <option value ="省部级以下">省部级以下</option>           
+                          <option value ="其他">其他</option>           
                         </select> 
                     </div>
                     <div class="select_block"> 
@@ -226,9 +231,9 @@
                         <label>项目状态</label>
                         <select name ="projectState">
                           <option value ="">所有</option>
-                          <option value ="on_serach"> 在研</option>
-                          <option value ="complete">结题</option> 
-                          <option value ="other">其他</option>         
+                          <option value ="在研"> 在研</option>
+                          <option value ="结题">结题</option> 
+                          <option value ="其他">其他</option>         
                         </select>     
                      </div>
                   </div> 
@@ -245,7 +250,7 @@
                   
               <div style="clear:both;"></div>
                <div class="btn-center">
-                  <input class="btn btn-success"  id="btn-condition" type="submit" value="提交"  >    
+                  <input class="btn btn-success"  id="btn-condition" type="submit" value="查询"  >    
                 </div>
           </form>
           </fieldset>
@@ -402,46 +407,15 @@
                               }
                           while($row=mysqli_fetch_array($result))
                           {
-                            switch ($row['projectType']) {
-                              case 'country':
-                                $projectType ="国家级项目";
-                                break;
-                              case 'province':
-                                $projectType ="省部级项目";
-                                break;
-                              case 'under_province':
-                                $projectType ="省部级以下";
-                                break;   
-                              case 'other':
-                                $projectType ="其他";
-                                break; 
-                                default:
-                                $projectType ="未成功获取数据";
-                               break;  
-                              }
-                            switch ($row['projectState']) {
-                              case 'on_serach':
-                                $projectState="在研";
-                                break;
-                              case 'complete':
-                                $projectState ="结题";
-                                break;
                           
-                              case 'other':
-                                $projectState ="其他";
-                                break;  
-                               default:
-                                $projectState ="未成功获取数据";
-                               break;  
-                            }
-                                echo"<tr><td>".$projectType;     
+                                echo"<tr><td>".$row['projectType']."</td>";     
                                 echo"<td>".$row['projectDepartment']."</td>";
                                 echo"<td>".$row['projectName']."</td>";
                                 echo"<td>".$row['projectMaster']."</td>";
                                 echo"<td>".$row['projectMember']."</td>";
                                 echo"<td>".$row['projectFunding']."</td>";
                                 echo"<td>".$row['projectTime']."</td>";
-                                echo"<td>".$projectState."</td>";
+                                echo"<td>".$row['projectState']."</td>";
                                 echo"</td></tr>";
                                 $sum++;
                           }

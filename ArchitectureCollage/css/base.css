@@ -235,7 +235,7 @@ p.completed-warning{margin-left: 8%; font-size: 20px;color: #26B15B; }
 	font-family: "微软雅黑";
   
 }
-.condition_select label{display: inline-block; width: 100px;text-align: right;}
+.condition_select label{font-size: 14px; display: inline-block; width: 100px;text-align: right;}
 .condition_select select{min-width: 100px;}
 #btn-condition{width: 120px;  margin-top: 20px; margin-bottom: 10px;}
 #result_p{margin-left:auto;margin-right: auto;display: block;width: 100px;}
@@ -262,3 +262,4 @@ li.now_li_2 a{color:#17a9e3;}
 .clear{clear: both;}
 fieldset{border: 0;}
 #footer.login_foot{background:none;color:#2589C3;}
+.induce_remind span{color: #D92924;}

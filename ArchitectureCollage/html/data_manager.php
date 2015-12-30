@@ -175,7 +175,7 @@
                       <ul class="sider_ul_2">
                         <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
                         <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce"><a href="#">数据导入</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="research_project_induce.php">数据导入</a></li>
                       </ul>
                  
               
@@ -420,7 +420,7 @@
             
             </table>
              <div class="btn-center">
-              <input class="btn btn-danger"  id= type="submit" value="删除所选数据"  >
+              <input class="btn btn-danger"  type="submit" value="删除所选数据"  >
              </div>
             </form>
           </br>

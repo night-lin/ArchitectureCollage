@@ -3,6 +3,7 @@ include_once("connect.php");
 session_start();
 $name = $_POST["login-user"];
 $_SESSION["id"]=$name;
+$_SESSION["menu_item"] = "project_research";
 $pwd = $_POST["login-password"];
 $jud = 0;
 	echo"<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
@@ -15,7 +16,7 @@ $jud = 0;
 		{
 			echo"
             <script>
-            window.location.href='../html/research_project.php'</script>";	
+            window.location.href='../html/research_project/research_project.php'</script>";	
             $jud = 1;	
 		}
 		if( $jud==0)
