@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+<!Doctype html>
  <head>
   <meta charset="UTF-8">
   <meta name="Generator" content="EditPlus®">
@@ -19,11 +18,7 @@
                 var ok5=false;
                 var ok6=false;
                 var ok7=false;
-                var ok8=false;
- 
-                
-                
-                
+                var ok8=false;        
                $('.submit').click(function(){
                 if($('select[name="projectType"]').val().length >0)
                   {
@@ -38,7 +33,7 @@
                   {
                     ok3=true;
                   }
-                if($('input[name="projectDepartment"]').val().length >= 1)
+                if($('input[name="projecthepartment"]').val().length >= 1)
                   {
                     ok4=true;
                   }
@@ -169,13 +164,12 @@
         </div>
         <div id="main-content">
           <div id="sider">
-           <ul class="sider_ul_1">
-                
-                   <li name="research_project" class="now_li sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
+              <ul class="sider_ul_1">
+                   <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
                       <ul class="sider_ul_2">
-                        <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 menu_chioce now_li_2"><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce"><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2 "><a href="../research_project/research_project.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../research_project/research_project_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../research_project/research_project_induce.php">数据导入</a></li>
                       </ul>
                  
               
@@ -188,17 +182,18 @@
                
               <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
                     <ul class="sider_ul_2">
-                       <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
+                     <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
                         <li  class="sider_li_2 "><a href="../patent/patent_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../patent/patent_induce.php">数据导入</a></li>
                       </ul>
                
-               <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
-                    <ul class="sider_ul_2">
-                     <li class="sider_li_2  "><a href="../academic_book/academic_book.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_book/academic_book_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../academic_book/academic_book_induce.php">数据导入</a></li>
+               <li class="sider_li_1 now_li"><img src="../../image/book.png" width="40">学术专著</li>
+               <ul class="sider_ul_2">
+                       <li class="sider_li_2  menu_chioce  now_li_2"><a href="academic_book.php">数据查询</a></li>
+                        <li  class="sider_li_2 menu_chioce"><a href="academic_book_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="academic_book_induce.php">数据导入</a></li>
                       </ul>
+                    
               
                <li class="sider_li_1"><img src="../../image/meeting.png" width="40">学术会议</li>
                     <ul class="sider_ul_2">
@@ -227,184 +222,40 @@
                         <li  class="sider_li_2 "><a href="../academic_position/academic_position_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
                     </ul>
-              
-           
             </ul>
           </div>
           <div id="right-text">
-
+        
           
             <div class="table_input_area">
-             <fieldset>
-              <form id="add_form"  method="post"  action="#"  enctype="multipart/form-data">
-                <div class="condition_select">
-                   <div class="select_block">
-                      <label>项目类型</label>
-                        <select name ="projectType">  
-                          <option value ="">未选择</option>
-                          <option value ="country"> 国家级项目</option>
-                          <option value ="province">省部级项目</option>
-                          <option value ="under_province">省部级以下</option>           
-                          <option value ="other">其他</option>           
-                        </select> 
-                    </div>
-                    <div class="select_block"> 
-                     <label>项目负责人</label>
-                  <input type="text" name="projectMaster" >          
-                     
-                    </div>
-                    <div class="select_block">    
-                       <label>起止年限</label>
-                      <input type="text" name="projectTime"  >
-                     
-                    </div>
-                   
-                </div>
-            
-              <div class="condition_select">
-                <div class="select_block">
-                  <label>下达部门</label>
-                        <input type="text" name="projectDepartment" >
-                </div>
-                <div class="select_block">
-                <label>项目成员</label>
-                  <input type="text" name="projectMember"  >
-                  </div>
-                <div class="select_block">
-
-                  <label>项目状态</label>
-                  <select name ="projectState">
-                    <option value ="">未选择</option>
-                    <option value ="on_serach"> 在研</option>
-                    <option value ="complete">结题</option> 
-                    <option value ="other">其他</option>         
-                  </select>  
-               
-                </div>
-            </div> 
-             <div class="condition_select">
-              <div class="select_block">
-                <label>项目名称</label>
-                  <input type="text" name="projectName" >
+              <div class="induce_remind">
+                在导入之前请将相应excel文件<span>严格按照样例格式</span>进行排版！一旦上传错误将<span>无法撤销</span>！
+                 
+              </br> </br>
+                 若使用<span>Excel2003及以上版本或者WPS</span>的表格时,请用对应的Excel工具把文件<span>另存为.xls后缀的文件</span>！  
               </div>
-              <div class="select_block">
-                  <label>项目经费</label>
-                  <input type="text" name="projectFunding" >  
-                    </div>
-               </div>   
-                  
-               <div style="clear:both;"></div>
-                <div class="btn-center">
-                  <input class="btn btn-success submit"  type="submit" value="添加一条数据"  >
-                  </div>
-               
-          </form>
-        </fieldset>
-         <form action="../../php/research_project_del.php" method="post">
-          <table class="table_gen" border="1">
-          
+              </br>
               <?php
-                 header("Content-type: text/html; charset:utf-8");                 
-                  
-                     $num_condition = 0;
-                     //$sql="SELECT * FROM research_project ";
+                echo'样例：</br>';
+                echo'<table class="table_gen" border="1">';
+                       
+                echo'<tr><th>作者</th><th>专著名称</th><th>著作类别</th><th>出版单位</th><th>书号</th><th>出版日期</th><th>学科分类</th></tr>';
+                echo'<tr><td>张小龙</td><td>《毛巾的角度看》</td><td>专著</td><td>4564546545674897</td><td>中国人民出版社</td><td>2015-10-25</td><td>地质学</td>
 
-                     $projectType = isset($_POST["projectType"])?$_POST["projectType"]:"";
-                   
-
-                    $projectDepartment = isset($_POST["projectDepartment"])?$_POST["projectDepartment"]:"";
-
-                    
-
-                      $projectName = isset($_POST["projectName"])?$_POST["projectName"]:"";
-                    
-                      
-                      $projectMaster = isset($_POST["projectMaster"])?$_POST["projectMaster"]:"";
-                    
-                     $projectMember = isset($_POST["projectMember"])?$_POST["projectMember"]:"";
-                     
-
-                     $projectFunding = isset($_POST["projectFunding"])?$_POST["projectFunding"]:"";
-                  
-
-                     $projectTime = isset($_POST["projectTime"])?$_POST["projectTime"]:"";
-                   
-
-                     $projectState =  isset($_POST["projectState"])?$_POST["projectState"]:"";
-                    if(!empty($projectType)&&!empty($projectDepartment)&&!empty($projectName)&&!empty($projectMaster)&&!empty($projectMember)&&!empty($projectFunding)&&!empty($projectTime)&&!empty($projectState))
-                    {
-                     $sql="SELECT MAX(id) FROM research_project";
-                     $result = mysqli_query($mysqli,$sql);
-                     $row = mysqli_fetch_array($result);
-                     $id=$row[0]+1; 
-                     //echo $id;
-                     $sql="INSERT INTO research_project(`id`,`projectType`, `projectDepartment`, `projectName`, `projectMaster`, `projectMember`, `projectFunding`, `projectTime`, `projectState`) VALUES ( '$id','$projectType','$projectDepartment','$projectName','$projectMaster','$projectMember','$projectFunding','$projectTime','$projectState')"; 
-                      mysqli_query($mysqli,"SET NAMES UTF8");
-                      $result = mysqli_query($mysqli,$sql);      
-                    }
-
-                      $sql="SELECT * FROM research_project";
-                      mysqli_query($mysqli,"SET NAMES UTF8");
-                      $head = 0;
-                      //echo $sql."</br>";
-                      $result = mysqli_query($mysqli,$sql);
-                      $sum = 0;
-                      if(mysqli_num_rows($result)>0)
-                      {
-                        if($head==0)
-                             {
-                                echo"<tr><td>项目类型";     
-                                echo"<td>项目下达部门</td>";
-                                echo"<td>项目名称</td>";
-                                echo"<td>项目负责人</td>";
-                                echo"<td>项目组成员</td>";
-                                echo"<td>项目经费</td>";
-                                echo"<td>起止年限</td>";
-                                echo"<td>项目状态</td>";
-                                echo"<td>管理选项</td>";
-                                echo"</td></tr>";
-                                 $head = 1;
-                              }
-                          while($row=mysqli_fetch_array($result))
-                          {
-                               echo"<input type='hidden' name='table_name' value='research_project'>";
-                                echo"<tr><td>".$row["projectType"]."</td>";     
-                                echo"<td>".$row['projectDepartment']."</td>";
-                                echo"<td>".$row['projectName']."</td>";
-                                echo"<td>".$row['projectMaster']."</td>";
-                                echo"<td>".$row['projectMember']."</td>";
-                                echo"<td>".$row['projectFunding']."</td>";
-                                echo"<td>".$row['projectTime']."</td>";
-                                echo"<td>".$row["projectState"]."</td>";
-                                echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
-                                echo"</td></tr>";
-                                $sum++;
-                          }
-                         
-                      }
-                     
-
-                     
-                     
-                        
-                      
-                      
-                  
+                ';
+                echo'</table>';
+                echo'
+                <form method="post" action="../../php/data_induce.php" enctype="multipart/form-data">
+                  <input type="hidden" name="table_name" value="academic_book">     
+                <div class="btn-center">
+                    <input type="file"  name="testFile">
+                    <input class="btn btn-success"  id="btn-condition" type="submit" value="提交"  >    
+                </div></form>
+                '
               ?>
-             
-            
-            </table>
-             <div class="btn-center">
-              <input class="btn btn-danger"  type="submit" value="删除所选数据"  >
-             </div>
-            </form>
-          </br>
-            <?php
-             echo "<p id='result_p'>共 <span id='result_num'>".$sum."</span> 条结果</p>";
-             ?>
-        </div>
+            </div>
          
-      </div> 
+       </div> 
   </div>
  </div>
   <div id ="footer">

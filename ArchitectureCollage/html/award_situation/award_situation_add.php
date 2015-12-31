@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="">
+  <meta name="platformCategory" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
@@ -14,51 +14,24 @@
    $(function(){
                 var ok1=false;
                 var ok2=false;
-                var ok3=false;
-                var ok4=false;
-                var ok5=false;
-                var ok6=false;
-                var ok7=false;
-                var ok8=false;
- 
-                
-                
-                
+              
+             
                $('.submit').click(function(){
-                if($('select[name="projectType"]').val().length >0)
-                  {
-                    
+
+                if($('select[name="awardCategory"]').val().length >0)
+                  {   
                     ok1=true;
-                  }
-                if($('input[name="projectMaster"]').val().length > 0)
+                  } 
+                  
+                   //alert("1");
+                if($('input[name="awardName"]').val().length > 0)
                   {
                     ok2=true;
                   }
-                if($('input[name="projectTime"]').val().length >= 1)
-                  {
-                    ok3=true;
-                  }
-                if($('input[name="projectDepartment"]').val().length >= 1)
-                  {
-                    ok4=true;
-                  }
-                if($('input[name="projectMember"]').val().length >= 1)
-                  {
-                    ok5=true;
-                  }
-                if($('select[name="projectState"]').val().length >= 1)
-                  {
-                    ok6=true;
-                  }
-                if($('input[name="projectName"]').val().length >= 1)
-                  {
-                    ok7=true;
-                  }
-                if($('input[name="projectFunding"]').val().length >= 1)
-                 { 
-                  ok8=true;
-                }
-                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true)
+               
+              
+
+                if(ok1==true&&ok2==true)
                       $('.submit').submit();
                 else{
                         alert("添加数据时，请填写所有信息!");
@@ -169,13 +142,12 @@
         </div>
         <div id="main-content">
           <div id="sider">
-           <ul class="sider_ul_1">
-                
-                   <li name="research_project" class="now_li sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
+              <ul class="sider_ul_1">
+                   <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
                       <ul class="sider_ul_2">
-                        <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 menu_chioce now_li_2"><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce"><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2 "><a href="../research_project/research_project.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../research_project/research_project_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../research_project/research_project_induce.php">数据导入</a></li>
                       </ul>
                  
               
@@ -188,17 +160,18 @@
                
               <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
                     <ul class="sider_ul_2">
-                       <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
+                     <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
                         <li  class="sider_li_2 "><a href="../patent/patent_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../patent/patent_induce.php">数据导入</a></li>
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
-                    <ul class="sider_ul_2">
-                     <li class="sider_li_2  "><a href="../academic_book/academic_book.php">数据查询</a></li>
+                <ul class="sider_ul_2">
+                        <li class="sider_li_2  "><a href="../academic_book/academic_book.php">数据查询</a></li>
                         <li  class="sider_li_2 "><a href="../academic_book/academic_book_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../academic_book/academic_book_induce.php">数据导入</a></li>
                       </ul>
+                    
               
                <li class="sider_li_1"><img src="../../image/meeting.png" width="40">学术会议</li>
                     <ul class="sider_ul_2">
@@ -208,98 +181,64 @@
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/plat.png" width="40">科技平台</li>
-                   <ul class="sider_ul_2">
+                    <ul class="sider_ul_2">
                         <li class="sider_li_2  "><a href="../science_platform/science_platform.php">数据查询</a></li>
                         <li  class="sider_li_2 "><a href="../science_platform/science_platform_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../science_platform/science_platform_induce.php">数据导入</a></li>
                       </ul>
+
                
                <li class="sider_li_1"><img src="../../image/award.png" width="40">获奖情况 </li>
-                    <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../award_situation/award_situation.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../award_situation/award_situation_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../award_situation/award_situation_induce.php">数据导入</a></li>
+                    <ul class="sider_ul_2  now_li">
+                       <li class="sider_li_2  menu_chioce"><a href="award_situation.php">数据查询</a></li>
+                        <li  class="sider_li_2 menu_chioce  now_li_2"><a href="award_situation_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="award_situation_induce.php">数据导入</a></li>
                       </ul>
+                   
               
                <li class="sider_li_1"><img src="../../image/position.png" width="40">学团职务 </li>
                     <ul class="sider_ul_2">
                         <li class="sider_li_2  "><a href="../academic_position/academic_position.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_position/academic_position_add.php">数据管理</a></li>
+                        <li  class="sider_li_2  "><a href="../academic_position/academic_position_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
                     </ul>
-              
-           
             </ul>
           </div>
           <div id="right-text">
 
           
             <div class="table_input_area">
-             <fieldset>
-              <form id="add_form"  method="post"  action="#"  enctype="multipart/form-data">
-                <div class="condition_select">
-                   <div class="select_block">
-                      <label>项目类型</label>
-                        <select name ="projectType">  
-                          <option value ="">未选择</option>
-                          <option value ="country"> 国家级项目</option>
-                          <option value ="province">省部级项目</option>
-                          <option value ="under_province">省部级以下</option>           
-                          <option value ="other">其他</option>           
-                        </select> 
-                    </div>
-                    <div class="select_block"> 
-                     <label>项目负责人</label>
-                  <input type="text" name="projectMaster" >          
+                 <fieldset>
+                <form  method="post"  action="#"  enctype="multipart/form-data">
+                  <div class="condition_select">
+                   <div class="select_block"> 
+                    <label>奖励级别</label>       
+                      <select name="awardCategory">
+                      <option value="">未选择</option> 
+                      <option value="国家级一等">国家级一等</option>
+                      <option value="国家级二等">国家级二等</option>  
+                      <option value="省部重大贡献">省部重大贡献</option>  
+                      <option value="省部一等奖">省部一等奖</option>  
+                      <option value="省部二等奖">省部二等奖</option>   
+                      <option value="省部三等奖">省部三等奖</option>
+                      </select>              
                      
                     </div>
-                    <div class="select_block">    
-                       <label>起止年限</label>
-                      <input type="text" name="projectTime"  >
-                     
-                    </div>
-                   
-                </div>
-            
-              <div class="condition_select">
-                <div class="select_block">
-                  <label>下达部门</label>
-                        <input type="text" name="projectDepartment" >
-                </div>
-                <div class="select_block">
-                <label>项目成员</label>
-                  <input type="text" name="projectMember"  >
+                    
                   </div>
-                <div class="select_block">
-
-                  <label>项目状态</label>
-                  <select name ="projectState">
-                    <option value ="">未选择</option>
-                    <option value ="on_serach"> 在研</option>
-                    <option value ="complete">结题</option> 
-                    <option value ="other">其他</option>         
-                  </select>  
-               
-                </div>
-            </div> 
-             <div class="condition_select">
-              <div class="select_block">
-                <label>项目名称</label>
-                  <input type="text" name="projectName" >
-              </div>
-              <div class="select_block">
-                  <label>项目经费</label>
-                  <input type="text" name="projectFunding" >  
+                  <div class="condition_select">
+                     <div class="select_block"> 
+                      <label>奖励名称</label>
+                      <input type="text" name="awardName">           
                     </div>
-               </div>   
-                  
-               <div style="clear:both;"></div>
-                <div class="btn-center">
-                  <input class="btn btn-success submit"  type="submit" value="添加一条数据"  >
-                  </div>
-               
+                 
+                  </div>  
+              <div style="clear:both;"></div>
+               <div class="btn-center">
+                  <input class="btn btn-success submit"  id="btn-condition" type="submit" value="添加一条数据"  >    
+                </div>
           </form>
-        </fieldset>
+          </fieldset>
          <form action="../../php/research_project_del.php" method="post">
           <table class="table_gen" border="1">
           
@@ -309,73 +248,46 @@
                      $num_condition = 0;
                      //$sql="SELECT * FROM research_project ";
 
-                     $projectType = isset($_POST["projectType"])?$_POST["projectType"]:"";
+                    $awardCategory = isset($_POST["awardCategory"])?$_POST["awardCategory"]:"";
+                    $awardName = isset($_POST["awardName"])?$_POST["awardName"]:"";
                    
-
-                    $projectDepartment = isset($_POST["projectDepartment"])?$_POST["projectDepartment"]:"";
-
-                    
-
-                      $projectName = isset($_POST["projectName"])?$_POST["projectName"]:"";
-                    
-                      
-                      $projectMaster = isset($_POST["projectMaster"])?$_POST["projectMaster"]:"";
-                    
-                     $projectMember = isset($_POST["projectMember"])?$_POST["projectMember"]:"";
-                     
-
-                     $projectFunding = isset($_POST["projectFunding"])?$_POST["projectFunding"]:"";
-                  
-
-                     $projectTime = isset($_POST["projectTime"])?$_POST["projectTime"]:"";
-                   
-
-                     $projectState =  isset($_POST["projectState"])?$_POST["projectState"]:"";
-                    if(!empty($projectType)&&!empty($projectDepartment)&&!empty($projectName)&&!empty($projectMaster)&&!empty($projectMember)&&!empty($projectFunding)&&!empty($projectTime)&&!empty($projectState))
+                    if(!empty($awardCategory)&&!empty($awardName))
                     {
-                     $sql="SELECT MAX(id) FROM research_project";
+                     $sql="SELECT MAX(id) FROM award_situation";
                      $result = mysqli_query($mysqli,$sql);
                      $row = mysqli_fetch_array($result);
                      $id=$row[0]+1; 
                      //echo $id;
-                     $sql="INSERT INTO research_project(`id`,`projectType`, `projectDepartment`, `projectName`, `projectMaster`, `projectMember`, `projectFunding`, `projectTime`, `projectState`) VALUES ( '$id','$projectType','$projectDepartment','$projectName','$projectMaster','$projectMember','$projectFunding','$projectTime','$projectState')"; 
+                     $sql="INSERT INTO award_situation(`id`, `awardCategory`, `awardName`)
+                     VALUES ( '$id','$awardCategory','$awardName')"; 
                       mysqli_query($mysqli,"SET NAMES UTF8");
-                      $result = mysqli_query($mysqli,$sql);      
+                      $result = mysqli_query($mysqli,$sql);  
+                     // echo $sql."</br>";    
                     }
 
-                      $sql="SELECT * FROM research_project";
+                      $sql="SELECT * FROM award_situation";
                       mysqli_query($mysqli,"SET NAMES UTF8");
                       $head = 0;
-                      //echo $sql."</br>";
+                      
                       $result = mysqli_query($mysqli,$sql);
                       $sum = 0;
                       if(mysqli_num_rows($result)>0)
                       {
                         if($head==0)
                              {
-                                echo"<tr><td>项目类型";     
-                                echo"<td>项目下达部门</td>";
-                                echo"<td>项目名称</td>";
-                                echo"<td>项目负责人</td>";
-                                echo"<td>项目组成员</td>";
-                                echo"<td>项目经费</td>";
-                                echo"<td>起止年限</td>";
-                                echo"<td>项目状态</td>";
-                                echo"<td>管理选项</td>";
+                              echo"<tr><td>奖励类别</td>";     
+                                echo"<td>奖励名称</td>";
+                        
+                               echo"<td>管理选项</td>";
                                 echo"</td></tr>";
                                  $head = 1;
                               }
                           while($row=mysqli_fetch_array($result))
                           {
-                               echo"<input type='hidden' name='table_name' value='research_project'>";
-                                echo"<tr><td>".$row["projectType"]."</td>";     
-                                echo"<td>".$row['projectDepartment']."</td>";
-                                echo"<td>".$row['projectName']."</td>";
-                                echo"<td>".$row['projectMaster']."</td>";
-                                echo"<td>".$row['projectMember']."</td>";
-                                echo"<td>".$row['projectFunding']."</td>";
-                                echo"<td>".$row['projectTime']."</td>";
-                                echo"<td>".$row["projectState"]."</td>";
+                               echo"<input type='hidden' name='table_name' value='award_situation'>";
+                                echo"<tr><td>".$row['awardCategory']."</td>";     
+                                echo"<td>".$row['awardName']."</td>";
+                               
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";
                                 $sum++;

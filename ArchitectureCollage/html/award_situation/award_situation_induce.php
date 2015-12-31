@@ -164,56 +164,51 @@
         </div>
         <div id="main-content">
           <div id="sider">
-           <ul class="sider_ul_1">
-                
-                   <li name="research_project" class="now_li sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
+              <ul class="sider_ul_1">
+                   <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
                       <ul class="sider_ul_2">
-                        <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 menu_chioce"><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2"><a href="../research_project/research_project.php">数据查询</a></li>
+                        <li class="sider_li_2"><a href="../research_project/research_project_add.php">数据管理</a></li>
+                        <li class="sider_li_2"><a href="../research_project/research_project_induce.php">数据导入</a></li>
                       </ul>
-                 
-              
                <li name="thesis"  class="sider_li_1"><img src="../../image/thesis.png" width="40">论文发表</li>
-                   <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../thesis/thesis.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../thesis/thesis_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../thesis/thesis_induce.php">数据导入</a></li>
-                  </ul>
+                     <ul class="sider_ul_2">
+                        <li class="sider_li_2"><a href="../thesis/thesis.php">数据查询</a></li>
+                        <li class="sider_li_2"><a href="../thesis/thesis_add.php">数据管理</a></li>
+                        <li class="sider_li_2"><a href="../thesis/thesis_induce.php">数据导入</a></li>
+                     </ul>
                
-               <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
-                    <ul class="sider_ul_2">
-                       <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../patent/patent_add.php">数据管理</a></li>
+              <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
+                     <ul class="sider_ul_2">
+                        <li class="sider_li_2"><a href="../patent/patent.php">数据查询</a></li>
+                        <li class="sider_li_2"><a href="../patent/patent_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../patent/patent_induce.php">数据导入</a></li>
-                      </ul>
-               
+                      </ul>               
                <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
-                    <ul class="sider_ul_2">
-                     <li class="sider_li_2  "><a href="../academic_book/academic_book.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_book/academic_book_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../academic_book/academic_book_induce.php">数据导入</a></li>
-                      </ul>
-              
+                      <ul class="sider_ul_2">
+                        <li class="sider_li_2"><a href="academic_book.php">数据查询</a></li>
+                        <li class="sider_li_2"><a href="academic_book_add.php">数据管理</a></li>
+                        <li class="sider_li_2"><a href="academic_book_induce.php">数据导入</a></li>
+                      </ul>                                  
                <li class="sider_li_1"><img src="../../image/meeting.png" width="40">学术会议</li>
-                    <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../academic_meeting/academic_meeting.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_meeting/academic_meeting_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../academic_meeting/academic_meeting_induce.php">数据导入</a></li>
+                      <ul class="sider_ul_2">
+                        <li class="sider_li_2"><a href="../academic_meeting/academic_meeting.php">数据查询</a></li>
+                        <li class="sider_li_2"><a href="../academic_meeting/academic_meeting_add.php">数据管理</a></li>
+                        <li class="sider_li_2"><a href="../academic_meeting/academic_meeting_induce.php">数据导入</a></li>
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/plat.png" width="40">科技平台</li>
                    <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../science_platform/science_platform.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../science_platform/science_platform_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../science_platform/science_platform.php">数据查询</a></li>
+                        <li class="sider_li_2 "><a href="../science_platform/science_platform_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../science_platform/science_platform_induce.php">数据导入</a></li>
                       </ul>
                
-               <li class="sider_li_1"><img src="../../image/award.png" width="40">获奖情况 </li>
+               <li class="sider_li_1 now_li"><img src="../../image/award.png" width="40">获奖情况 </li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../award_situation/award_situation.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../award_situation/award_situation_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../award_situation/award_situation_induce.php">数据导入</a></li>
+                        <li class="sider_li_2 menu_chioce "><a href="award_situation.php">数据查询</a></li>
+                        <li  class="sider_li_2 menu_chioce"><a href="award_situation_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce now_li_2"><a href="award_situation_induce.php">数据导入</a></li>
                       </ul>
               
                <li class="sider_li_1"><img src="../../image/position.png" width="40">学团职务 </li>
@@ -222,8 +217,6 @@
                         <li  class="sider_li_2 "><a href="../academic_position/academic_position_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
                     </ul>
-              
-           
             </ul>
           </div>
           <div id="right-text">
@@ -240,23 +233,17 @@
               <?php
                 echo'样例：</br>';
                 echo'<table class="table_gen" border="1">';
-                echo'<tr><th>项目类型</th><th>项目下达部门</th><th>项目名称</th><th>项目负责人</th><th>项目组成员</th><th>项目经费</th><th>起止年限</th><th>项目状态</th></tr>';
-                echo'<tr><td>国家级项目</td><td>福州大学</td><td>xx项目</td><td>张小龙</td><td>王俊强，邓雪峰，吴大飞</td><td>90万</td>
+                       
+                               
 
-                <td>2014.09-2015.12</td><td>在研</td></tr>';
+                echo'<tr><th>奖励类别</th><th>奖励名称</th></tr>';
+                echo'<tr><td>国家级一等</td><td>全国建筑设计一等奖</td></tr>
+
+                ';
                 echo'</table>';
                 echo'
                 <form method="post" action="../../php/data_induce.php" enctype="multipart/form-data">
-                  <input type="hidden" name="table_name" value="research_project">
-                  <input type="hidden" name="item[]" value="projectType">
-                  <input type="hidden" name="item[]" value="projectDepartment">
-                  <input type="hidden" name="item[]" value="projectName">                
-                  <input type="hidden" name="item[]" value="projectMaster">
-                  <input type="hidden" name="item[]" value="projectMember">
-                  <input type="hidden" name="item[]" value="projectFunding">
-                  <input type="hidden" name="item[]" value="projectTime">
-                  <input type="hidden" name="item[]" value="projectState">
-                  
+                  <input type="hidden" name="table_name" value="award_situation">     
                 <div class="btn-center">
                     <input type="file"  name="testFile">
                     <input class="btn btn-success"  id="btn-condition" type="submit" value="提交"  >    

@@ -156,11 +156,11 @@
                         <li class="sider_li_2 "><a href="../thesis/thesis_induce.php">数据导入</a></li>
                   </ul>
                
-              <li name="111"  class="sider_li_1 now_li "><img src="../../image/patent.png" width="40">专利情况</li>
+              <li name="111"  class="sider_li_1 "><img src="../../image/patent.png" width="40">专利情况</li>
                     <ul class="sider_ul_2">
-                       <li class="sider_li_2  menu_chioce  now_li_2"><a href="patent.php">数据查询</a></li>
-                        <li  class="sider_li_2 menu_chioce"><a href="patent_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce"><a href="patent_induce.php">数据导入</a></li>
+                       <li class="sider_li_2"><a href="patent.php">数据查询</a></li>
+                        <li  class="sider_li_2"><a href="patent_add.php">数据管理</a></li>
+                        <li class="sider_li_2"><a href="patent_induce.php">数据导入</a></li>
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
@@ -191,11 +191,11 @@
                         <li class="sider_li_2 "><a href="../award_situation/award_situation_induce.php">数据导入</a></li>
                       </ul>
               
-               <li class="sider_li_1"><img src="../../image/position.png" width="40">学团职务 </li>
+               <li class="sider_li_1  now_li"><img src="../../image/position.png" width="40">学团职务 </li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../academic_position/academic_position.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_position/academic_position_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
+                        <li class="sider_li_2   now_li_2  menu_chioce"><a href="../academic_position/academic_position.php">数据查询</a></li>
+                        <li  class="sider_li_2  menu_chioce"><a href="../academic_position/academic_position_add.php">数据管理</a></li>
+                        <li class="sider_li_2  menu_chioce"><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
                     </ul>
             </ul>
           </div>
@@ -208,54 +208,35 @@
           
             <fieldset>
                 <form  method="post"  action="#"  enctype="multipart/form-data">
-                  <div class="condition_select">
-                    <div class="select_block">
-                      <label>专利类型</label>
-                        <select name ="patentType"> 
-                          <option value ="">未选择</option>
-                          <option value ="专利群">专利群</option>
-                          <option value ="国外专利">国外专利</option>
-                          <option value ="发明专利">发明专利</option>
-                          <option value ="实用新型专利">实用新型专利</option>           
-                          <option value ="其它"> 其它</option>           
-                        </select> 
+                   <div class="condition_select">
+                    <div class="select_block"> 
+                        <label>学术团体名称</label>
+                        <input type="text" name="organizationName">                 
                     </div>
                     <div class="select_block"> 
-                     <label>专利授权国</label>
-                    <input type="text" name="authorizeCountry">          
+                        <label>担任职务</label>
+                        <input type="text" name="position">          
                      
                     </div>
 
                   </div>
             
                   <div class="condition_select">
-                      <div class="select_block">    
-                       <label>专利状态</label>
-                        <select name ="patentState">
-                        <option value ="">所有</option>
-                        <option value ="申请"> 申请</option>
-                        <option value ="公开">公开</option>
-                        <option value ="授权">授权</option>           
-                        <option value ="其他">其他</option>   
-                        </select>                
-                    </div>    
+                    <div class="select_block"> 
+                        <label>姓名</label>
+                        <input type="text" name="name" />                 
+                    </div>
                      <div class="select_block">
-                          <label>发明人</label>
-                          <input type="text" name="inventor" >
-                      </div>
-                     
+                          <label>单位职务</label>
+                          <input type="text" name="unitPosition" />
+                      </div>               
                   </div> 
                  <div class="condition_select">
                      <div class="select_block">
-                        <label>专利名称</label>
-                        <input type="text" name="patentName"  >
-                      </div>
-                     <div class="select_block">
-                        <label>申请号或授权号</label>
-                        <input type="text" name="authorizeNumber"  >
+                        <label>批准时间</label>
+                        <input type="text" name="approvalTime" />
                       </div>
                 </div>   
-                  
               <div style="clear:both;"></div>
                <div class="btn-center">
                   <input class="btn btn-success"  id="btn-condition" type="submit" value="查询"  >    
@@ -269,97 +250,82 @@
                  header("Content-type: text/html; charset:utf-8");                 
                   
                      $num_condition = 0;
-                     $sql="SELECT * FROM patent";
+                     $sql="SELECT * FROM academic_position";
                      //echo $sql;
-                     $patentType = isset($_POST["patentType"])?$_POST["patentType"]:"";
-                     if(!empty($patentType))
+                     $organizationName = isset($_POST["organizationName"])?$_POST["organizationName"]:"";
+                     if(!empty($organizationName))
                       {
                        
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.=" WHERE patentType ='$patentType'";
+                            $sql.=" WHERE organizationName ='$organizationName'";
                           }
                         else
                         {
-                           $sql.="AND patentType ='$patentType'";
+                           $sql.="AND organizationName ='$organizationName'";
                         }
                           
                       }
 
-                    $authorizeCountry = isset($_POST["authorizeCountry"])?$_POST["authorizeCountry"]:"";
+                    $position = isset($_POST["position"])?$_POST["position"]:"";
 
-                     if(!empty($authorizeCountry))
+                     if(!empty($position))
                       {
                         
                         $num_condition++;
                         if($num_condition==1)
                         {
-                           $sql.=" WHERE authorizeCountry LIKE '%$authorizeCountry%'";
+                           $sql.=" WHERE position LIKE '%$position%'";
                         }
                         else
                         {
-                           $sql.= "AND authorizeCountry LIKE '%$authorizeCountry%'";
+                           $sql.= "AND position LIKE '%$position%'";
                         }
 
                       }
 
-                      $patentState = isset($_POST["patentState"])?$_POST["patentState"]:"";
-                     if(!empty($patentState))
+                      $name = isset($_POST["name"])?$_POST["name"]:"";
+                     if(!empty($name))
                      {
                       $num_condition++;         
                       if($num_condition==1)
                         {
-                           $sql.=" WHERE patentState LIKE '%$patentState%'";
+                           $sql.=" WHERE name LIKE '%$name%'";
                         }
                       else
                         {
-                           $sql.= "AND patentState  LIKE '%$patentState%'";
+                           $sql.= "AND name  LIKE '%$name%'";
                         }  
                      }
                       
-                      $inventor = isset($_POST["inventor"])?$_POST["inventor"]:"";
-                     if(!empty($inventor))
+                      $unitPosition = isset($_POST["unitPosition"])?$_POST["unitPosition"]:"";
+                     if(!empty($unitPosition))
                      {
                       $num_condition++;
                       
                       if($num_condition==1)
                         {
-                          $sql.=" WHERE inventor  LIKE '%$inventor%'";
+                          $sql.=" WHERE unitPosition  LIKE '%$unitPosition%'";
                         }
                       else
                         {
-                           $sql.= "AND inventor  LIKE '%$inventor%'";
+                           $sql.= "AND unitPosition  LIKE '%$unitPosition%'";
                         }  
                      }
 
-                     $patentName = isset($_POST["patentName"])?$_POST["patentName"]:"";
-                     if(!empty($patentName))
+                     $approvalTime = isset($_POST["approvalTime"])?$_POST["approvalTime"]:"";
+                     if(!empty($approvalTime))
                      {
                       $num_condition++;
                       
                       if($num_condition==1)
                         {
-                          $sql.=" WHERE patentName  LIKE '%$patentName%'";
+                          $sql.=" WHERE approvalTime  LIKE '%$approvalTime%'";
                         }
                       else
                         {
-                           $sql.= "AND patentName LIKE '%$patentName%'";
-                        }  
-                     }
-
-                     $authorizeNumber = isset($_POST["authorizeNumber"])?$_POST["authorizeNumber"]:"";
-                     if(!empty($authorizeNumber))
-                      {
-                        $num_condition++;
-                       
-                      if($num_condition==1)
-                        {
-                          $sql.="WHERE authorizeNumber  LIKE '%$authorizeNumber%'";
-                        }
-                      else
-                        {
-                           $sql.= "AND authorizeNumber  LIKE '%$authorizeNumber%'";
+                           $sql.= "AND approvalTime LIKE '%$approvalTime%'";
                         }  
                      }
 
@@ -374,24 +340,24 @@
                       {
                         if($head==0)
                              {
-                                echo"<tr><td>专利类型</td>";     
-                                echo"<td>专利授权国</td>";
-                                echo"<td>专利状态</td>";
-                                echo"<td>发明人</td>";
-                                echo"<td>专利名称</td>";
-                                echo"<td>申请号或授权号</td>";
+                                echo"<tr><td>学术团体名称</td>";     
+                                echo"<td>姓名</td>";
+                                echo"<td>批准时间</td>";
+                              
+                                echo"<td>担任职务</td>";
+                                echo"<td>单位职务</td>";
                                 echo"</td></tr>";
                                  $head = 1;
                               }
                           while($row=mysqli_fetch_array($result))
                           {
                           
-                                echo"<tr><td>".$row['patentType']."</td>";     
-                                echo"<td>".$row['authorizeCountry']."</td>";
-                                echo"<td>".$row['patentState']."</td>";
-                                echo"<td>".$row['inventor']."</td>";
-                                echo"<td>".$row['patentName']."</td>";
-                                echo"<td>".$row['authorizeNumber']."</td>";
+                                echo"<tr><td>".$row['organizationName']."</td>";     
+                                echo"<td>".$row['position']."</td>";
+                                echo"<td>".$row['name']."</td>";
+                                echo"<td>".$row['unitPosition']."</td>";
+                                echo"<td>".$row['approvalTime']."</td>";
+                             
                                 echo"</td></tr>";
                                 $sum++;
                           }

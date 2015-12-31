@@ -142,63 +142,63 @@
           <div id="sider">
            <ul class="sider_ul_1">
                 
-                   <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
+                  <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
                       <ul class="sider_ul_2">
-                        <li class="sider_li_2"><a href="../research_project/research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2"><a href="../research_project/research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2"><a href="../research_project/research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2  "><a href="../research_project/research_project.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../research_project/research_project.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../research_project/research_project.php">数据导入</a></li>
                       </ul>
                  
               
-               <li name="thesis"  class="now_li sider_li_1"><img src="../../image/thesis.png" width="40">论文发表</li>
+               <li name="thesis now_li "  class="sider_li_1"><img src="../../image/thesis.png" width="40">论文发表</li>
                    <ul class="sider_ul_2">
-                        <li class="sider_li_2  menu_chioce now_li_2 "><a href="thesis.php">数据查询</a></li>
-                        <li  class="sider_li_2  menu_chioce"><a href="thesis_add.php">数据管理</a></li>
-                        <li class="sider_li_2  menu_chioce"><a href="thesis_induce.php">数据导入</a></li>
+                     <li class="sider_li_2 menu_chioce now_li_2"><a href="thesis.php">数据查询</a></li>
+                        <li  class="sider_li_2 menu_chioce "><a href="thesis_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="thesis_induce.php">数据导入</a></li>
+                       
                   </ul>
                
               <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="research_project_induce.php">数据导入</a></li>
+                       <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../patent/patent_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../patent/patent_induce.php">数据导入</a></li>
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="research_project_induce.php">数据导入</a></li>
+                     <li class="sider_li_2  "><a href="../academic_book/academic_book.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../academic_book/academic_book_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../academic_book/academic_book_induce.php">数据导入</a></li>
                       </ul>
               
                <li class="sider_li_1"><img src="../../image/meeting.png" width="40">学术会议</li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2  "><a href="../academic_meeting/academic_meeting.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../academic_meeting/academic_meeting_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../academic_meeting/academic_meeting_induce.php">数据导入</a></li>
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/plat.png" width="40">科技平台</li>
                    <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2  "><a href="../science_platform/science_platform.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../science_platform/science_platform_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../science_platform/science_platform_induce.php">数据导入</a></li>
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/award.png" width="40">获奖情况 </li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2  "><a href="../award_situation/award_situation.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../award_situation/award_situation_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../award_situation/award_situation_induce.php">数据导入</a></li>
                       </ul>
               
                <li class="sider_li_1"><img src="../../image/position.png" width="40">学团职务 </li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2  "><a href="../academic_position/academic_position.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../academic_position/academic_position_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
                     </ul>
-              
            
             </ul>
           </div>
@@ -215,7 +215,7 @@
                     <div class="select_block">
                       <label>论文类型</label>          
                         <select name ="thesisType">  
-                          <option value ="">所有</option>
+                          <option value ="">未选择</option>
                           <option value ="SCI检索"> SCI检索</option>
                           <option value ="EI检索">EI检索</option>
                           <option value =" SSCI"> SSCI</option>           

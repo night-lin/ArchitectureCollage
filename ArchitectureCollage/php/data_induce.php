@@ -74,15 +74,61 @@
           $data->sheets[0]['cells'][$i][5]."','".    
           $data->sheets[0]['cells'][$i][6]."')";
           break; 
-           case 'research_project': 
+           case 'academic_book': 
+            $sql = "INSERT INTO $table_name(`id`, `author`, `bookName`, `bookCategory`, `publishUnit`, `bookNumber`, `publishDate`, `subjectCategory`)
+          VALUES('".
+          $id."','".
+          $data->sheets[0]['cells'][$i][1]."','".    
+          $data->sheets[0]['cells'][$i][2]."','". 
+          $data->sheets[0]['cells'][$i][3]."','".    
+          $data->sheets[0]['cells'][$i][4]."','". 
+          $data->sheets[0]['cells'][$i][5]."','".
+          $data->sheets[0]['cells'][$i][6]."','". 
+                 
+          $data->sheets[0]['cells'][$i][7]."')";
           break; 
-           case 'research_project': 
+           case 'academic_meeting':
+             $sql = "INSERT INTO $table_name(`id`, `meetingType`, `meetingName`, `hostUnit`, `coUnit`, `meetingNumber`, `communicateForm`, `meetingPlace`, `meetingTime`)
+          VALUES('".
+          $id."','".
+          $data->sheets[0]['cells'][$i][1]."','".    
+          $data->sheets[0]['cells'][$i][2]."','". 
+          $data->sheets[0]['cells'][$i][3]."','".    
+          $data->sheets[0]['cells'][$i][4]."','". 
+          $data->sheets[0]['cells'][$i][5]."','".    
+          $data->sheets[0]['cells'][$i][6]."','". 
+          $data->sheets[0]['cells'][$i][7]."','".    
+          $data->sheets[0]['cells'][$i][8]."')"; 
           break; 
-           case 'research_project': 
+           case 'science_platform':
+            $sql = "INSERT INTO $table_name(`id`, `platformCategory`, `platformName`, `platformMaster`, `cooperUnit`, `contractTime`, `cooperFunds`, `cooperOrganization`)
+          VALUES('".
+          $id."','".
+          $data->sheets[0]['cells'][$i][1]."','".    
+          $data->sheets[0]['cells'][$i][2]."','". 
+          $data->sheets[0]['cells'][$i][3]."','".    
+          $data->sheets[0]['cells'][$i][4]."','". 
+          $data->sheets[0]['cells'][$i][5]."','".
+          $data->sheets[0]['cells'][$i][6]."','". 
+                 
+          $data->sheets[0]['cells'][$i][7]."')"; 
           break; 
-           case 'research_project': 
+           case 'award_situation':
+           $sql = "INSERT INTO $table_name(`id`, `awardCategory`, `awardName`)
+          VALUES('".
+          $id."','".
+          $data->sheets[0]['cells'][$i][1]."','".    
+          $data->sheets[0]['cells'][$i][2]."')"; 
           break; 
-           case 'research_project': 
+           case 'academic_position':
+           $sql = "INSERT INTO $table_name(`id`, `organizationName`, `position`, `name`, `unitPosition`, `approvalTime`)
+          VALUES('".
+          $id."','".
+          $data->sheets[0]['cells'][$i][1]."','".
+          $data->sheets[0]['cells'][$i][2]."','".
+          $data->sheets[0]['cells'][$i][3]."','".
+          $data->sheets[0]['cells'][$i][4]."','".    
+          $data->sheets[0]['cells'][$i][5]."')";  
           break;  
           
           default:
@@ -92,7 +138,8 @@
           $mysqli->query($sql);
           $insert_info.= " $sql</br>";          //可以用来显示数据插入的信息
           $totalNums=$data->sheets[0]['numRows']-1;//求出导入的总数据条数(这里是减去2，才会得到去除标题后的总数据)
-       // echo $insert_info."</br>".$totalNums;
+        echo  $table_name."</br>";
+        echo $insert_info."</br>".$totalNums;
         //echo($totalNums);
         }
        unlink("$filename");  //删除上传的excel文件

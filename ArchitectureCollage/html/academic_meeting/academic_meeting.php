@@ -140,10 +140,10 @@
         </div>
         <div id="main-content">
           <div id="sider">
-                 <ul class="sider_ul_1">
+            <ul class="sider_ul_1">
                    <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
-                      <ul class="sider_ul_2">
-                        <li class="sider_li_2 "><a href="../research_project/research_project.php">数据查询</a></li>
+                       <ul class="sider_ul_2">
+                        <li class="sider_li_2  "><a href="../research_project/research_project.php">数据查询</a></li>
                         <li  class="sider_li_2 "><a href="../research_project/research_project_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../research_project/research_project_induce.php">数据导入</a></li>
                       </ul>
@@ -156,26 +156,27 @@
                         <li class="sider_li_2 "><a href="../thesis/thesis_induce.php">数据导入</a></li>
                   </ul>
                
-              <li name="111"  class="sider_li_1 now_li "><img src="../../image/patent.png" width="40">专利情况</li>
+              <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
                     <ul class="sider_ul_2">
-                       <li class="sider_li_2  menu_chioce  now_li_2"><a href="patent.php">数据查询</a></li>
-                        <li  class="sider_li_2 menu_chioce"><a href="patent_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce"><a href="patent_induce.php">数据导入</a></li>
+                       <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../patent/patent_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../patent/patent_induce.php">数据导入</a></li>
                       </ul>
                
-               <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
+               <li class="sider_li_1 "><img src="../../image/book.png" width="40">学术专著</li>
                     <ul class="sider_ul_2">
                      <li class="sider_li_2  "><a href="../academic_book/academic_book.php">数据查询</a></li>
                         <li  class="sider_li_2 "><a href="../academic_book/academic_book_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../academic_book/academic_book_induce.php">数据导入</a></li>
                       </ul>
               
-               <li class="sider_li_1"><img src="../../image/meeting.png" width="40">学术会议</li>
-                    <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../academic_meeting/academic_meeting.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_meeting/academic_meeting_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../academic_meeting/academic_meeting_induce.php">数据导入</a></li>
-                      </ul>
+               <li class="sider_li_1 now_li"><img src="../../image/meeting.png" width="40">学术会议</li>
+                   
+                      <ul class="sider_ul_2">
+                        <li class="sider_li_2 menu_chioce now_li_2"><a href="academic_meeting.php">数据查询</a></li>
+                        <li  class="sider_li_2 menu_chioce"><a href="academic_meeting_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="academic_meeting_induce.php">数据导入</a></li>
+                      </ul>                  
                
                <li class="sider_li_1"><img src="../../image/plat.png" width="40">科技平台</li>
                    <ul class="sider_ul_2">
@@ -210,50 +211,56 @@
                 <form  method="post"  action="#"  enctype="multipart/form-data">
                   <div class="condition_select">
                     <div class="select_block">
-                      <label>专利类型</label>
-                        <select name ="patentType"> 
+                      <label>会议类型 </label> 
+                        <select name ="meetingType">  
                           <option value ="">未选择</option>
-                          <option value ="专利群">专利群</option>
-                          <option value ="国外专利">国外专利</option>
-                          <option value ="发明专利">发明专利</option>
-                          <option value ="实用新型专利">实用新型专利</option>           
-                          <option value ="其它"> 其它</option>           
+                          <option value ="国际会议"> 国际会议</option>
+                          <option value ="全国性">全国性</option>
+                          <option value ="地方性">地方性</option>           
+                          <option value ="其他">其他</option>           
                         </select> 
                     </div>
                     <div class="select_block"> 
-                     <label>专利授权国</label>
-                    <input type="text" name="authorizeCountry">          
+                     <label>会议名称</label>
+                  <input type="text" name="meetingName" >          
                      
                     </div>
-
+                    <div class="select_block">    
+                       <label>主办单位</label>
+                      <input type="text" name="hostUnit"  >
+                     
+                    </div>    
                   </div>
             
                   <div class="condition_select">
-                      <div class="select_block">    
-                       <label>专利状态</label>
-                        <select name ="patentState">
-                        <option value ="">所有</option>
-                        <option value ="申请"> 申请</option>
-                        <option value ="公开">公开</option>
-                        <option value ="授权">授权</option>           
-                        <option value ="其他">其他</option>   
-                        </select>                
-                    </div>    
                      <div class="select_block">
-                          <label>发明人</label>
-                          <input type="text" name="inventor" >
+                          <label>协办单位</label>
+                          <input type="text" name="coUnit" >
                       </div>
-                     
+                      <div class="select_block">
+                        <label>会议人数</label>
+                        <input type="text" name=" meetingNumber"  >
+                      </div>
+                     <div class="select_block">
+                        <label>交流形式</label>
+                         <select name ="communicateForm">
+                          <option value ="">未选择</option>
+                          <option value ="研讨">研讨</option>
+                          <option value ="宣读">宣读</option>
+                          <option value ="海报">海报</option>  
+                          <option value ="其他">其他</option>         
+                        </select>     
+                     </div>
                   </div> 
                  <div class="condition_select">
-                     <div class="select_block">
-                        <label>专利名称</label>
-                        <input type="text" name="patentName"  >
-                      </div>
-                     <div class="select_block">
-                        <label>申请号或授权号</label>
-                        <input type="text" name="authorizeNumber"  >
-                      </div>
+                    <div class="select_block">
+                      <label>会议地点</label>
+                        <input type="text" name="meetingPlace" >
+                    </div>
+                    <div class="select_block">
+                        <label>会议时间</label>
+                        <input type="text" name="meetingTime" >  
+                    </div>
                 </div>   
                   
               <div style="clear:both;"></div>
@@ -269,101 +276,129 @@
                  header("Content-type: text/html; charset:utf-8");                 
                   
                      $num_condition = 0;
-                     $sql="SELECT * FROM patent";
-                     //echo $sql;
-                     $patentType = isset($_POST["patentType"])?$_POST["patentType"]:"";
-                     if(!empty($patentType))
+                     $sql="SELECT * FROM academic_meeting ";
+
+                     $meetingType = isset($_POST["meetingType"])?$_POST["meetingType"]:"";
+                     if(!empty($meetingType))
                       {
                        
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.=" WHERE patentType ='$patentType'";
+                            $sql.="WHERE meetingType ='$meetingType'";
                           }
                         else
                         {
-                           $sql.="AND patentType ='$patentType'";
+                           $sql.="AND meetingType ='$meetingType'";
                         }
                           
                       }
 
-                    $authorizeCountry = isset($_POST["authorizeCountry"])?$_POST["authorizeCountry"]:"";
+                    $meetingName = isset($_POST["meetingName"])?$_POST["meetingName"]:"";
 
-                     if(!empty($authorizeCountry))
+                     if(!empty($meetingName))
                       {
                         
                         $num_condition++;
                         if($num_condition==1)
                         {
-                           $sql.=" WHERE authorizeCountry LIKE '%$authorizeCountry%'";
+                          $sql.="WHERE meetingName LIKE '%$meetingName%'";
                         }
                         else
                         {
-                           $sql.= "AND authorizeCountry LIKE '%$authorizeCountry%'";
+                           $sql.= "AND meetingName LIKE '%$meetingName%'";
                         }
 
                       }
 
-                      $patentState = isset($_POST["patentState"])?$_POST["patentState"]:"";
-                     if(!empty($patentState))
+                      $hostUnit = isset($_POST["hostUnit"])?$_POST["hostUnit"]:"";
+                     if(!empty($hostUnit))
                      {
                       $num_condition++;         
                       if($num_condition==1)
                         {
-                           $sql.=" WHERE patentState LIKE '%$patentState%'";
+                          $sql.="WHERE hostUnit LIKE '%$hostUnit%'";
                         }
                       else
                         {
-                           $sql.= "AND patentState  LIKE '%$patentState%'";
+                           $sql.= "AND hostUnit  LIKE '%$hostUnit%'";
                         }  
                      }
                       
-                      $inventor = isset($_POST["inventor"])?$_POST["inventor"]:"";
-                     if(!empty($inventor))
+                      $coUnit = isset($_POST["coUnit"])?$_POST["coUnit"]:"";
+                     if(!empty($coUnit))
                      {
                       $num_condition++;
                       
                       if($num_condition==1)
                         {
-                          $sql.=" WHERE inventor  LIKE '%$inventor%'";
+                          $sql.="WHERE coUnit  LIKE '%$coUnit%'";
                         }
                       else
                         {
-                           $sql.= "AND inventor  LIKE '%$inventor%'";
+                           $sql.= "AND coUnit  LIKE '%$coUnit%'";
                         }  
                      }
 
-                     $patentName = isset($_POST["patentName"])?$_POST["patentName"]:"";
-                     if(!empty($patentName))
+                     $meetingNumber = isset($_POST["meetingNumber"])?$_POST["meetingNumber"]:"";
+                     if(!empty($meetingNumber))
                      {
                       $num_condition++;
                       
                       if($num_condition==1)
                         {
-                          $sql.=" WHERE patentName  LIKE '%$patentName%'";
+                          $sql.="WHERE meetingNumber  LIKE '%$meetingNumber%'";
                         }
                       else
                         {
-                           $sql.= "AND patentName LIKE '%$patentName%'";
+                           $sql.= "AND meetingNumber LIKE '%$meetingNumber%'";
                         }  
                      }
 
-                     $authorizeNumber = isset($_POST["authorizeNumber"])?$_POST["authorizeNumber"]:"";
-                     if(!empty($authorizeNumber))
+                     $communicateForm = isset($_POST["communicateForm"])?$_POST["communicateForm"]:"";
+                     if(!empty($communicateForm))
                       {
                         $num_condition++;
                        
                       if($num_condition==1)
                         {
-                          $sql.="WHERE authorizeNumber  LIKE '%$authorizeNumber%'";
+                          $sql.="WHERE communicateForm  LIKE '%$communicateForm%'";
                         }
                       else
                         {
-                           $sql.= "AND authorizeNumber  LIKE '%$authorizeNumber%'";
+                           $sql.= "AND communicateForm  LIKE '%$communicateForm%'";
                         }  
                      }
 
-                    
+                     $meetingPlace = isset($_POST["meetingPlace"])?$_POST["meetingPlace"]:"";
+                     if(!empty($meetingPlace))
+                    {
+                      $num_condition++;
+                      
+                      if($num_condition==1)
+                        {
+                          $sql.="WHERE meetingPlace  LIKE '%$meetingPlace%'";
+                        }
+                      else
+                        {
+                           $sql.= "AND meetingPlace  LIKE '%$meetingPlace%'";
+                        }  
+                     }
+
+                     $meetingTime =  isset($_POST["meetingTime"])?$_POST["meetingTime"]:"";
+                     if(!empty($meetingTime))
+                     {
+                      $num_condition++;
+                     
+                      if($num_condition==1)
+                        {
+                          $sql.="WHERE meetingTime  LIKE '%$meetingTime%'";
+                        }
+                      else
+                        {
+                           $sql.= "AND meetingTime  LIKE '%$meetingTime%'";
+                        }  
+                     }
                       
                       mysqli_query($mysqli,"SET NAMES UTF8");
                       $head = 0;
@@ -374,24 +409,29 @@
                       {
                         if($head==0)
                              {
-                                echo"<tr><td>专利类型</td>";     
-                                echo"<td>专利授权国</td>";
-                                echo"<td>专利状态</td>";
-                                echo"<td>发明人</td>";
-                                echo"<td>专利名称</td>";
-                                echo"<td>申请号或授权号</td>";
+                                echo"<tr><td>会议类型";     
+                                echo"<td>会议名称</td>";
+                                echo"<td>主办单位</td>";
+                                echo"<td>协办单位</td>";
+                                echo"<td>会议人数</td>";
+                                echo"<td>交流形式</td>";
+                                echo"<td>会议地点</td>";
+                                echo"<td>会议时间</td>";
                                 echo"</td></tr>";
                                  $head = 1;
                               }
                           while($row=mysqli_fetch_array($result))
                           {
-                          
-                                echo"<tr><td>".$row['patentType']."</td>";     
-                                echo"<td>".$row['authorizeCountry']."</td>";
-                                echo"<td>".$row['patentState']."</td>";
-                                echo"<td>".$row['inventor']."</td>";
-                                echo"<td>".$row['patentName']."</td>";
-                                echo"<td>".$row['authorizeNumber']."</td>";
+                                 echo"<input type='hidden' name='table_name' value='academic_meeting'>";
+                                echo"<tr><td>".$row['meetingType']."</td>";     
+                                echo"<td>".$row['meetingName']."</td>";
+                                echo"<td>".$row['hostUnit']."</td>";
+                                echo"<td>".$row['coUnit']."</td>";
+                                echo"<td>".$row['meetingNumber']."</td>";
+                                echo"<td>".$row['communicateForm']."</td>";
+                                echo"<td>".$row['meetingPlace']."</td>";
+                                echo"<td>".$row['meetingTime']."</td>";
+
                                 echo"</td></tr>";
                                 $sum++;
                           }

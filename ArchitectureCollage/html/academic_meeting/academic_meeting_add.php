@@ -12,7 +12,6 @@
   <script type"text/javascript">
   //验证表单信息是否有空
    $(function(){
-
                 var ok1=false;
                 var ok2=false;
                 var ok3=false;
@@ -21,59 +20,49 @@
                 var ok6=false;
                 var ok7=false;
                 var ok8=false;
-                var ok9=false;
-                var ok10=false;   
-
-                $('.submit').click(function(){
-                if($('select[name="thesisType"]').val().length >0)
+ 
+                
+                
+                
+               $('.submit').click(function(){
+                if($('select[name="meetingType"]').val().length >0)
                   {
                     
                     ok1=true;
                   }
-                if($('input[name="firstAuthor"]').val().length > 0)
+                if($('input[name="coUnit"]').val().length > 0)
                   {
                     ok2=true;
                   }
-                if($('input[name="corresAuthor"]').val().length >= 1)
+                if($('input[name="meetingPlace"]').val().length >= 1)
                   {
                     ok3=true;
                   }
-                if($('input[name="thesisTopicZh"]').val().length >= 1)
+                if($('input[name="meetingName"]').val().length >= 1)
                   {
                     ok4=true;
                   }
-                if($('input[name="thesisTopicEn"]').val().length >= 1)
+                if($('input[name="meetingNumber"]').val().length >= 1)
                   {
                     ok5=true;
                   }
-                  //alert("ok2");
-                if($('input[name="journalName"]').val().length >= 1)
+                if($('select[name="communicateForm"]').val().length >= 1)
                   {
                     ok6=true;
                   }
-                  // alert("ok2");
-                if($('input[name="factor"]').val().length >= 1)
+                if($('input[name="hostUnit"]').val().length >= 1)
                   {
                     ok7=true;
                   }
-                if($('input[name="publishYear"]').val().length >= 1)
+                if($('input[name="meetingTime"]').val().length >= 1)
                  { 
                   ok8=true;
                 }
-                if($('input[name="volume"]').val().length >= 1)
-                 { 
-                  ok9=true;
-                }
-                if($('input[name="quoteFrequency"]').val().length >= 1)
-                 { 
-                  ok10=true;
-                }
-               
-                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true&&ok9==true&&ok10==true)
+                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true)
                       $('.submit').submit();
                 else{
                         alert("添加数据时，请填写所有信息!");
-                        //alert($('select[name="projectType"]').val().length >0);
+                        //alert($('select[name="meetingType"]').val().length >0);
                         //alert(ok2);
                         return false;
                       }
@@ -181,21 +170,19 @@
         <div id="main-content">
           <div id="sider">
            <ul class="sider_ul_1">
-                
-                  <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
-                      <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../research_project/research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../research_project/research_project.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../research_project/research_project.php">数据导入</a></li>
+                   <li name="academic_meeting" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
+                       <ul class="sider_ul_2">
+                        <li class="sider_li_2  "><a href="../academic_meeting/academic_meeting.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../academic_meeting/academic_meeting_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../academic_meeting/academic_meeting_induce.php">数据导入</a></li>
                       </ul>
                  
               
-               <li name="thesis now_li "  class="sider_li_1"><img src="../../image/thesis.png" width="40">论文发表</li>
+               <li name="thesis"  class="sider_li_1"><img src="../../image/thesis.png" width="40">论文发表</li>
                    <ul class="sider_ul_2">
-                     <li class="sider_li_2 menu_chioce "><a href="thesis.php">数据查询</a></li>
-                        <li  class="sider_li_2 menu_chioce now_li_2"><a href="thesis_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce"><a href="thesis_induce.php">数据导入</a></li>
-                       
+                        <li class="sider_li_2  "><a href="../thesis/thesis.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../thesis/thesis_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../thesis/thesis_induce.php">数据导入</a></li>
                   </ul>
                
               <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
@@ -205,19 +192,20 @@
                         <li class="sider_li_2 "><a href="../patent/patent_induce.php">数据导入</a></li>
                       </ul>
                
-               <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
+               <li class="sider_li_1 "><img src="../../image/book.png" width="40">学术专著</li>
                     <ul class="sider_ul_2">
                      <li class="sider_li_2  "><a href="../academic_book/academic_book.php">数据查询</a></li>
                         <li  class="sider_li_2 "><a href="../academic_book/academic_book_add.php">数据管理</a></li>
                         <li class="sider_li_2 "><a href="../academic_book/academic_book_induce.php">数据导入</a></li>
                       </ul>
               
-               <li class="sider_li_1"><img src="../../image/meeting.png" width="40">学术会议</li>
-                    <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../academic_meeting/academic_meeting.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_meeting/academic_meeting_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../academic_meeting/academic_meeting_induce.php">数据导入</a></li>
-                      </ul>
+               <li class="sider_li_1 now_li"><img src="../../image/meeting.png" width="40">学术会议</li>
+                   
+                      <ul class="sider_ul_2">
+                        <li class="sider_li_2 menu_chioce"><a href="academic_meeting.php">数据查询</a></li>
+                        <li  class="sider_li_2 menu_chioce now_li_2"><a href="academic_meeting_add.php">数据管理</a></li>
+                        <li class="sider_li_2 menu_chioce"><a href="academic_meeting_induce.php">数据导入</a></li>
+                      </ul>                  
                
                <li class="sider_li_1"><img src="../../image/plat.png" width="40">科技平台</li>
                    <ul class="sider_ul_2">
@@ -245,71 +233,64 @@
 
           
             <div class="table_input_area">
-          <fieldset>
-                <form  method="post"  action="#"  enctype="multipart/form-data">
+             <fieldset>
+              <form id="add_form"  method="post"  action="#"  enctype="multipart/form-data">
                   <div class="condition_select">
                     <div class="select_block">
-                      <label>论文类型</label>          
-                        <select name ="thesisType">  
+                      <label>会议类型 </label> 
+                        <select name ="meetingType">  
                           <option value ="">未选择</option>
-                          <option value ="SCI检索"> SCI检索</option>
-                          <option value ="EI检索">EI检索</option>
-                          <option value =" SSCI"> SSCI</option>           
-                          <option value ="A＆HCI">A＆HCI</option>
-                          <option value ="一类核心期刊(A1、A2)">一类核心期刊（A1、A2）</option>
-                          <option value ="二类核心期刊(B1、B2)">二类核心期刊(B1、B2)</option>
-                          <option value ="中文核心期刊">中文核心期刊</option>
-                          <option value ="一般期刊">一般期刊</option>
-                          <option value ="国际会议论文集(ISTP)">国际会议论文集（ISTP）</option>
-                          <option value ="国内会议论文集">国内会议论文集</option>
-                          <option value ="其它相关学科"> 其它相关学科</option>            
+                          <option value ="国际会议"> 国际会议</option>
+                          <option value ="全国性">全国性</option>
+                          <option value ="地方性">地方性</option>           
+                          <option value ="其他">其他</option>           
                         </select> 
                     </div>
                     <div class="select_block"> 
-                      <label>第一作者</label>
-                      <input type="text" name="firstAuthor" >                             
+                     <label>会议名称</label>
+                  <input type="text" name="meetingName" >          
+                     
                     </div>
                     <div class="select_block">    
-                       <label>通讯作者</label>
-                      <input type="text" name="corresAuthor"  >
+                       <label>主办单位</label>
+                      <input type="text" name="hostUnit"  >
+                     
                     </div>    
                   </div>
             
                   <div class="condition_select">
                      <div class="select_block">
-                          <label>论文题目(中文)</label>
-                          <input type="text" name="thesisTopicZh" >
+                          <label>协办单位</label>
+                          <input type="text" name="coUnit" >
                       </div>
                       <div class="select_block">
-                        <label>论文题目(英文)</label>
-                        <input type="text" name="thesisTopicEn"  >
+                        <label>会议人数</label>
+                        <input type="text" name="meetingNumber"  >
                       </div>
                      <div class="select_block">
-                        <label>期刊或会议名称</label>
-                        <input type="text" name="journalName"  >
-                      </div>
+                        <label>交流形式</label>
+                         <select name ="communicateForm">
+                          <option value ="">未选择</option>
+                          <option value ="研讨">研讨</option>
+                          <option value ="宣读">宣读</option>
+                          <option value ="海报">海报</option>  
+                          <option value ="其他">其他</option>         
+                        </select>     
+                     </div>
                   </div> 
                  <div class="condition_select">
                     <div class="select_block">
-                      <label>影响因子</label>
-                        <input type="text" name="factor" >
+                      <label>会议地点</label>
+                        <input type="text" name="meetingPlace" >
                     </div>
                     <div class="select_block">
-                        <label>发表年份 </label>
-                        <input type="text" name="publishYear" >  
-                    </div>
-                    <div class="select_block">
-                        <label>卷期/页码</label>
-                        <input type="text" name="volume" >  
-                    </div>
-                     <div class="select_block">
-                        <label>他引频次</label>
-                        <input type="text" name="quoteFrequency" >  
+                        <label>会议时间</label>
+                        <input type="text" name="meetingTime" >  
                     </div>
                 </div>   
                   
-              <div style="clear:both;"></div>
-               <div class="btn-center">
+               <div style="clear:both;"></div>
+                <div class="btn-center">
                   <input class="btn btn-success submit"  type="submit" value="添加一条数据"  >
                   </div>
                
@@ -322,34 +303,43 @@
                  header("Content-type: text/html; charset:utf-8");                 
                   
                      $num_condition = 0;
-                     //$sql="SELECT * FROM research_project ";
+                     //$sql="SELECT * FROM academic_meeting ";
 
-                     $thesisType = isset($_POST["thesisType"])?$_POST["thesisType"]:"";
-                     $firstAuthor = isset($_POST["firstAuthor"])?$_POST["firstAuthor"]:"";
-                     $corresAuthor = isset($_POST["corresAuthor"])?$_POST["corresAuthor"]:"";
-                     $thesisTopicZh = isset($_POST["thesisTopicZh"])?$_POST["thesisTopicZh"]:"";
-                     $thesisTopicEn = isset($_POST["thesisTopicEn"])?$_POST["thesisTopicEn"]:"";
-                     $journalName = isset($_POST["journalName"])?$_POST["journalName"]:"";
-                     $factor = isset($_POST["factor"])?$_POST["factor"]:"";
-                     $publishYear = isset($_POST["publishYear"])?$_POST["publishYear"]:"";
-                     $volume = isset($_POST["volume"])?$_POST["volume"]:"";
-                     $quoteFrequency = isset($_POST["quoteFrequency"])?$_POST["quoteFrequency"]:"";
+                     $meetingType = isset($_POST["meetingType"])?$_POST["meetingType"]:"";
+                   
+
+                    $meetingName = isset($_POST["meetingName"])?$_POST["meetingName"]:"";
+
                     
-                    if(!empty($thesisType)&&!empty($firstAuthor)&&!empty($corresAuthor)&&!empty($thesisTopicZh)&&!empty($thesisTopicEn)&&!empty($journalName)&&!empty($factor)&&!empty($publishYear)&&!empty($volume)&&!empty($quoteFrequency))
+
+                      $hostUnit = isset($_POST["hostUnit"])?$_POST["hostUnit"]:"";
+                    
+                      
+                      $coUnit = isset($_POST["coUnit"])?$_POST["coUnit"]:"";
+                    
+                     $meetingNumber = isset($_POST["meetingNumber"])?$_POST["meetingNumber"]:"";
+                     
+
+                     $communicateForm = isset($_POST["communicateForm"])?$_POST["communicateForm"]:"";
+                  
+
+                     $meetingPlace = isset($_POST["meetingPlace"])?$_POST["meetingPlace"]:"";
+                   
+
+                     $meetingTime =  isset($_POST["meetingTime"])?$_POST["meetingTime"]:"";
+                    if(!empty($meetingType)&&!empty($meetingName)&&!empty($hostUnit)&&!empty($coUnit)&&!empty($meetingNumber)&&!empty($communicateForm)&&!empty($meetingPlace)&&!empty($meetingTime))
                     {
-                     $sql="SELECT MAX(id) FROM thesis";
+                     $sql="SELECT MAX(id) FROM academic_meeting";
                      $result = mysqli_query($mysqli,$sql);
                      $row = mysqli_fetch_array($result);
                      $id=$row[0]+1; 
                      //echo $id;
-                     $sql="INSERT INTO thesis(`id`,`thesisType`, `firstAuthor`, `corresAuthor`, `thesisTopicZh`, `thesisTopicEn`, `journalName`, `factor`, `publishYear`,`volume`,`quoteFrequency`) 
-                     VALUES ( '$id','$thesisType','$firstAuthor','$corresAuthor','$thesisTopicZh','$thesisTopicEn','$journalName','$factor','$publishYear','$volume','$quoteFrequency')"; 
+                     $sql="INSERT INTO academic_meeting(`id`,`meetingType`, `meetingName`, `hostUnit`, `coUnit`, `meetingNumber`, `communicateForm`, `meetingPlace`, `meetingTime`) VALUES ( '$id','$meetingType','$meetingName','$hostUnit','$coUnit','$meetingNumber','$communicateForm','$meetingPlace','$meetingTime')"; 
                       mysqli_query($mysqli,"SET NAMES UTF8");
-
-                      $result = mysqli_query($mysqli,$sql); 
-                      //echo $sql."</br>";     
+                      $result = mysqli_query($mysqli,$sql);      
                     }
-                      $sql="SELECT * FROM thesis";
+
+                      $sql="SELECT * FROM academic_meeting";
                       mysqli_query($mysqli,"SET NAMES UTF8");
                       $head = 0;
                       //echo $sql."</br>";
@@ -359,40 +349,43 @@
                       {
                         if($head==0)
                              {
-                              echo"<input type='hidden' name='table_name' value='thesis'>";
-                                echo"<tr><td>论文类型</td>";     
-                                echo"<td>第一作者</td>";
-                                echo"<td>通讯作者</td>";
-                                echo"<td>论文题目(中文)</td>";
-                                echo"<td>论文题目(英文)</td>";
-                                echo"<td>期刊或会议名称</td>";
-                                echo"<td>影响因子</td>";
-                                
-                                echo"<td>发表年份</td>";
-                                echo"<td>卷期/页码</td>";
-                                echo"<td>他引频次</td>"; 
+                                echo"<tr><td>会议类型";     
+                                echo"<td>会议名称</td>";
+                                echo"<td>主办单位</td>";
+                                echo"<td>协办单位</td>";
+                                echo"<td>会议人数</td>";
+                                echo"<td>交流形式</td>";
+                                echo"<td>会议地点</td>";
+                                echo"<td>会议时间</td>";
                                   echo"<td>管理选项</td>";
                                 echo"</td></tr>";
                                  $head = 1;
                               }
                           while($row=mysqli_fetch_array($result))
                           {
-                                echo"<tr><td>".$row['thesisType']."</td>";     
-                                echo"<td>".$row['firstAuthor']."</td>";
-                                echo"<td>".$row['corresAuthor']."</td>";
-                                echo"<td>".$row['thesisTopicZh']."</td>";
-                                echo"<td>".$row['thesisTopicEn']."</td>";
-                                echo"<td>".$row['journalName']."</td>";
-                                echo"<td>".$row['factor']."</td>";
-                                echo"<td>".$row['publishYear']."</td>";
-                                echo"<td>".$row['volume']."</td>";
-                                echo"<td>".$row['quoteFrequency']."</td>";
+                             echo"<input type='hidden' name='table_name' value='academic_meeting'>";
+                               echo"<tr><td>".$row['meetingType']."</td>";     
+                                echo"<td>".$row['meetingName']."</td>";
+                                echo"<td>".$row['hostUnit']."</td>";
+                                echo"<td>".$row['coUnit']."</td>";
+                                echo"<td>".$row['meetingNumber']."</td>";
+                                echo"<td>".$row['communicateForm']."</td>";
+                                echo"<td>".$row['meetingPlace']."</td>";
+                                echo"<td>".$row['meetingTime']."</td>";
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";
                                 $sum++;
                           }
                          
-                      }              
+                      }
+                     
+
+                     
+                     
+                        
+                      
+                      
+                  
               ?>
              
             

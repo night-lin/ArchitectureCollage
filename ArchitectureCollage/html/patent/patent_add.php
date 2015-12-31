@@ -41,19 +41,12 @@
                   {
                     ok5=true;
                   }
-                if($('select[name="projectState"]').val().length >= 1)
+                if($('select[name="authorizeNumber"]').val().length >= 1)
                   {
                     ok6=true;
                   }
-                if($('input[name="projectName"]').val().length >= 1)
-                  {
-                    ok7=true;
-                  }
-                if($('input[name="projectFunding"]').val().length >= 1)
-                 { 
-                  ok8=true;
-                }
-                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true)
+              
+                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true)
                       $('.submit').submit();
                 else{
                         alert("添加数据时，请填写所有信息!");
@@ -233,7 +226,7 @@
                     <div class="select_block">
                       <label>专利类型</label>
                         <select name ="patentType"> 
-                          <option value ="">所有</option>
+                          <option value ="">未选择</option>
                           <option value ="专利群">专利群</option>
                           <option value ="国外专利">国外专利</option>
                           <option value ="发明专利">发明专利</option>

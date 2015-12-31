@@ -212,7 +212,7 @@
                     <div class="select_block">
                       <label>项目类型</label>
                         <select name ="projectType">  
-                          <option value ="">所有</option>
+                          <option value ="">未选择</option>
                           <option value ="国家级项目"> 国家级项目</option>
                           <option value ="省部级项目">省部级项目</option>
                           <option value ="省部级以下">省部级以下</option>           
@@ -243,7 +243,7 @@
                      <div class="select_block">
                         <label>项目状态</label>
                         <select name ="projectState">
-                          <option value ="">所有</option>
+                          <option value ="">未选择</option>
                           <option value ="在研"> 在研</option>
                           <option value ="结题">结题</option> 
                           <option value ="其他">其他</option>         

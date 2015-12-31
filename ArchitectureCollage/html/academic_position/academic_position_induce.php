@@ -164,13 +164,12 @@
         </div>
         <div id="main-content">
           <div id="sider">
-           <ul class="sider_ul_1">
-                
-                   <li name="research_project" class="now_li sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
+             <ul class="sider_ul_1">
+                   <li name="research_project" class="sider_li_1"><img src="../../image/item.png" width="40">科研项目</li>
                       <ul class="sider_ul_2">
-                        <li class="sider_li_2 menu_chioce"><a href="research_project.php">数据查询</a></li>
-                        <li  class="sider_li_2 menu_chioce"><a href="research_project_add.php">数据管理</a></li>
-                        <li class="sider_li_2 menu_chioce now_li_2"><a href="research_project_induce.php">数据导入</a></li>
+                        <li class="sider_li_2 "><a href="../research_project/research_project.php">数据查询</a></li>
+                        <li  class="sider_li_2 "><a href="../research_project/research_project_add.php">数据管理</a></li>
+                        <li class="sider_li_2 "><a href="../research_project/research_project_induce.php">数据导入</a></li>
                       </ul>
                  
               
@@ -181,11 +180,11 @@
                         <li class="sider_li_2 "><a href="../thesis/thesis_induce.php">数据导入</a></li>
                   </ul>
                
-               <li name="111"  class="sider_li_1"><img src="../../image/patent.png" width="40">专利情况</li>
+              <li name="111"  class="sider_li_1 "><img src="../../image/patent.png" width="40">专利情况</li>
                     <ul class="sider_ul_2">
-                       <li class="sider_li_2  "><a href="../patent/patent.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../patent/patent_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../patent/patent_induce.php">数据导入</a></li>
+                       <li class="sider_li_2"><a href="patent.php">数据查询</a></li>
+                        <li  class="sider_li_2"><a href="patent_add.php">数据管理</a></li>
+                        <li class="sider_li_2"><a href="patent_induce.php">数据导入</a></li>
                       </ul>
                
                <li class="sider_li_1"><img src="../../image/book.png" width="40">学术专著</li>
@@ -216,14 +215,12 @@
                         <li class="sider_li_2 "><a href="../award_situation/award_situation_induce.php">数据导入</a></li>
                       </ul>
               
-               <li class="sider_li_1"><img src="../../image/position.png" width="40">学团职务 </li>
+               <li class="sider_li_1  now_li"><img src="../../image/position.png" width="40">学团职务 </li>
                     <ul class="sider_ul_2">
-                        <li class="sider_li_2  "><a href="../academic_position/academic_position.php">数据查询</a></li>
-                        <li  class="sider_li_2 "><a href="../academic_position/academic_position_add.php">数据管理</a></li>
-                        <li class="sider_li_2 "><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
+                        <li class="sider_li_2    menu_chioce"><a href="../academic_position/academic_position.php">数据查询</a></li>
+                        <li  class="sider_li_2   menu_chioce"><a href="../academic_position/academic_position_add.php">数据管理</a></li>
+                        <li class="sider_li_2 now_li_2  menu_chioce"><a href="../academic_position/academic_position_induce.php">数据导入</a></li>
                     </ul>
-              
-           
             </ul>
           </div>
           <div id="right-text">
@@ -240,23 +237,16 @@
               <?php
                 echo'样例：</br>';
                 echo'<table class="table_gen" border="1">';
-                echo'<tr><th>项目类型</th><th>项目下达部门</th><th>项目名称</th><th>项目负责人</th><th>项目组成员</th><th>项目经费</th><th>起止年限</th><th>项目状态</th></tr>';
-                echo'<tr><td>国家级项目</td><td>福州大学</td><td>xx项目</td><td>张小龙</td><td>王俊强，邓雪峰，吴大飞</td><td>90万</td>
-
-                <td>2014.09-2015.12</td><td>在研</td></tr>';
+                       
+    
+                echo'<tr><th>学术团体名称</th><th>担任职务</th><th>姓名</th><th>单位职务</th><th>批准时间</th>';
+                echo'<tr><td>福建省建筑协会</td><td>会长</td><td>张丽</td><td>教授 </td><td> 2015-11-11</td></tr>
+                <tr><td>福建省建筑协会</td><td>会长</td><td>张丽</td><td>教授 </td><td> 2015-11-11</td></tr>
+                ';
                 echo'</table>';
                 echo'
                 <form method="post" action="../../php/data_induce.php" enctype="multipart/form-data">
-                  <input type="hidden" name="table_name" value="research_project">
-                  <input type="hidden" name="item[]" value="projectType">
-                  <input type="hidden" name="item[]" value="projectDepartment">
-                  <input type="hidden" name="item[]" value="projectName">                
-                  <input type="hidden" name="item[]" value="projectMaster">
-                  <input type="hidden" name="item[]" value="projectMember">
-                  <input type="hidden" name="item[]" value="projectFunding">
-                  <input type="hidden" name="item[]" value="projectTime">
-                  <input type="hidden" name="item[]" value="projectState">
-                  
+                  <input type="hidden" name="table_name" value="academic_position">     
                 <div class="btn-center">
                     <input type="file"  name="testFile">
                     <input class="btn btn-success"  id="btn-condition" type="submit" value="提交"  >    
