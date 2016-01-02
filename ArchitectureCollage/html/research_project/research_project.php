@@ -276,18 +276,18 @@
                      $num_condition = 0;
                      $sql="SELECT * FROM research_project ";
 
-                     $thesisType = isset($_POST["thesisType"])?$_POST["thesisType"]:"";
-                     if(!empty($thesisType))
+                     $projectType = isset($_POST["projectType"])?$_POST["projectType"]:"";
+                     if(!empty($projectType))
                       {
                        
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.="WHERE thesisType ='$thesisType'";
+                            $sql.="WHERE projectType ='$projectType'";
                           }
                         else
                         {
-                           $sql.="AND thesisType ='$thesisType'";
+                           $sql.="AND projectType ='$projectType'";
                         }
                           
                       }
