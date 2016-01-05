@@ -1,8 +1,14 @@
 <!Doctype html>
 <html lang="en">
  <head>
+   <meta name="renderer" content="webkit">
+   <!-- 避免IE使用兼容模式 -->
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  
   <meta charset="UTF-8">
   <meta name="Generator" content="EditPlus®">
+
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">

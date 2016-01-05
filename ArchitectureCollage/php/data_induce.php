@@ -138,8 +138,8 @@
           $mysqli->query($sql);
           $insert_info.= " $sql</br>";          //可以用来显示数据插入的信息
           $totalNums=$data->sheets[0]['numRows']-1;//求出导入的总数据条数(这里是减去2，才会得到去除标题后的总数据)
-        echo  $table_name."</br>";
-        echo $insert_info."</br>".$totalNums;
+        //echo  $table_name."</br>";
+       // echo $insert_info."</br>".$totalNums;
         //echo($totalNums);
         }
        unlink("$filename");  //删除上传的excel文件

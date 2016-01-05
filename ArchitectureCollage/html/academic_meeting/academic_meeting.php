@@ -2,6 +2,8 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
+  <meta name="renderer" content="webkit"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
   <meta name="Generator" content="EditPlus®">
   <meta name="Author" content="">
   <meta name="Keywords" content="">

@@ -8,6 +8,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
   <title>建筑学院管理系统</title>
   <script type="text/javascript" src="../../js/jquery.min.js"></script>  
+
+  <script type="text/javascript">
+//禁止重复提交
+  function downLoad(evt) {
+    disabledButton();
+    MyPeriodicalExecuter(evt);
+  }
+  function disabledButton(){
+    var inputs = document.getElementsByTagName("input");
+    for(var i = 0;i<inputs.length;i++){
+      if(inputs[i].type.toLowerCase()=="button")
+        inputs[i].disabled=true;
+    }
+  }
+  
+  function MyPeriodicalExecuter(evt){
+    succ.obj=evt;
+    succ.loop=0;
+    sh=setInterval(succ,1000);
+  }
+  
+  function succ(){
+    var str="禁止连续点击,"
+    with(arguments.callee){
+      obj.value=str+"("+(loop++)+"/3)秒后再试";
+      if (loop > 3){
+        enabledButton();
+        obj.value=" 下载 ";
+        clearInterval(sh);
+        return;
+      } 
+    }
+  }
+
+  function enabledButton(){
+    var inputs = document.getElementsByTagName("input");
+    for(var i = 0;i<inputs.length;i++){
+      if(inputs[i].type.toLowerCase()=="button")
+        inputs[i].disabled=false;
+    }
+  }
+  </script> 
   <script type"text/javascript">
   //验证表单信息是否有空
    $(function(){
@@ -258,7 +300,7 @@
                   
                 <div class="btn-center">
                     <input type="file"  name="testFile">
-                    <input class="btn btn-success"  id="btn-condition" type="submit" value="提交"  >    
+                    <input class="btn btn-success"  id="btn-condition" type="submit" value="提交" onClick="downLoad(this)"/  >    
                 </div></form>
                 '
               ?>

@@ -8,7 +8,23 @@
   <meta name="Description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
   <title>建筑学院管理系统</title>
-  <script type="text/javascript" src="../../js/jquery.min.js"></script>  
+  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+    
+
+  <script language="javascript"> 
+  //设置表单全选功能
+  function selectIt(action){ 
+    var testform=document.getElementById("bdkey"); 
+    for(var i=0 ;i<testform.elements.length;i++){ 
+        if(testform.elements[i].type=="checkbox"){ 
+            e=testform.elements[i]; 
+            e.checked=(action=="selectAll")?1:(!e.checked); 
+        } 
+    }     
+} 
+</script>
+
   <script type"text/javascript">
   //验证表单信息是否有空
    $(function(){
@@ -300,7 +316,7 @@
                
           </form>
         </fieldset>
-         <form action="../../php/research_project_del.php" method="post">
+         <form action="../../php/research_project_del.php" id="bdkey" method="post">
           <table class="table_gen" border="1">
           
               <?php
@@ -361,7 +377,8 @@
                                 echo"<td>项目经费</td>";
                                 echo"<td>起止年限</td>";
                                 echo"<td>项目状态</td>";
-                                echo"<td>管理选项</td>";
+                                echo"<td>管理选项<br>全 选 
+<input type='checkbox' name='selectAll' value='checkbox' onClick={selectIt('selectAll')}></td>";
                                 echo"</td></tr>";
                                  $head = 1;
                               }
@@ -395,6 +412,7 @@
             
             </table>
              <div class="btn-center">
+
               <input class="btn btn-danger"  type="submit" value="删除所选数据"  >
              </div>
             </form>
