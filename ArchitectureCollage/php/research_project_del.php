@@ -6,7 +6,7 @@
 	 	 echo"<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
      	 echo"
           <script>
-          window.location.href='../html/research_project_add.php';alert('未选择数据!')</script>";
+          window.location.href='../html/".$table_name."/".$table_name."_add.php';alert('未选择数据!')</script>";
 	 }
 	 //echo(count($delete_id));
 	 else{

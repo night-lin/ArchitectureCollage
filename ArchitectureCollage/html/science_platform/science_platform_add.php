@@ -10,16 +10,22 @@
   <title>建筑学院管理系统</title>
   <script type="text/javascript" src="../../js/jquery.min.js"></script> 
 
-  <script language="javascript"> 
+    <script language="javascript"> 
   //设置表单全选功能
-  function selectIt(action){ 
-    var testform=document.getElementById("bdkey"); 
-    for(var i=0 ;i<testform.elements.length;i++){ 
-        if(testform.elements[i].type=="checkbox"){ 
-            e=testform.elements[i]; 
-            e.checked=(action=="selectAll")?1:(!e.checked); 
-        } 
-    }     
+  function selectIt(action){
+  //
+  var checkbox = $("#bdkey").find("input[name='delete_data[]']");
+  var checkbox_jud = $("#bdkey").find("input[name='selectAll']");
+  if(action=="selectAll"&&checkbox_jud[0].checked==1)
+    for(var i=0 ;i<checkbox.length;i++)
+    {
+      checkbox[i].checked=1;
+    }
+    else if(action=="selectAll"&&checkbox_jud[0].checked==0)
+       for(var i=0 ;i<checkbox.length;i++)
+    {
+      checkbox[i].checked=0;
+    }
 } 
 </script>
 
