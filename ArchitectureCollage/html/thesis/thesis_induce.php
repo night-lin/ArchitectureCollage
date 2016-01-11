@@ -288,8 +288,8 @@
                 echo'样例：</br>';
                 echo'<table class="table_gen" border="1">';
                         
-                echo'<tr><th>论文类型</th><th>第一作者</th><th>通讯作者</th><th>论文题目(中文)</th><th>论文题目(英文)</th><th>期刊或会议名称</th><th>影响因子</th><th>发表年份</th><th>卷期/页码</th><th>他引频次</th></tr>';
-                echo'<tr><td>国内会议论文集</td><td>王小明</td><td>张建平</td><td>《论桥梁设计》</td><td>《On the bridge design》</td><td>《建筑设计》29期</td><td>xx因子</td><td>2011</td><td>35</td><td>201</td>
+                echo'<tr><th>论文类型</th><th>论文作者</th><th>论文题目</th><th>期刊或会议名称</th><th>CN/ISSN</th><th>主办单位</th><th>影响因子</th><th>发表年份</th><th>卷期/页码</th><th>他引频次</th></tr>';
+                echo'<tr><td>国内会议论文集</td><td>王小明</td><td>《论桥梁设计》</td><td>《建筑设计》29期</td><td>1546546</td><td>福州大学</td><td>xx因子</td><td>2011</td><td>35</td><td>201</td>
 
                 </tr>';
                 echo'</table>';

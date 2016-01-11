@@ -41,7 +41,7 @@
                 var ok6=false;
                 var ok7=false;
                 var ok8=false;
-                var ok9=false;
+              
                 var ok10=false;   
 
                 $('.submit').click(function(){
@@ -50,19 +50,19 @@
                     
                     ok1=true;
                   }
-                if($('input[name="firstAuthor"]').val().length > 0)
+                if($('input[name="Author"]').val().length > 0)
                   {
                     ok2=true;
                   }
-                if($('input[name="corresAuthor"]').val().length >= 1)
+                if($('input[name="cn"]').val().length >= 1)
                   {
                     ok3=true;
                   }
-                if($('input[name="thesisTopicZh"]').val().length >= 1)
+                if($('input[name="thesisTopic"]').val().length >= 1)
                   {
                     ok4=true;
                   }
-                if($('input[name="thesisTopicEn"]').val().length >= 1)
+                if($('input[name="hostUnit"]').val().length >= 1)
                   {
                     ok5=true;
                   }
@@ -80,16 +80,13 @@
                  { 
                   ok8=true;
                 }
-                if($('input[name="volume"]').val().length >= 1)
-                 { 
-                  ok9=true;
-                }
+              
                 if($('input[name="quoteFrequency"]').val().length >= 1)
                  { 
                   ok10=true;
                 }
                
-                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true&&ok9==true&&ok10==true)
+                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true&&ok10==true)
                       $('.submit').submit();
                 else{
                         alert("添加数据时，请填写所有信息!");
@@ -267,7 +264,7 @@
             <div class="table_input_area">
           <fieldset>
                 <form  method="post"  action="#"  enctype="multipart/form-data">
-                  <div class="condition_select">
+                   <div class="condition_select">
                     <div class="select_block">
                       <label>论文类型</label>          
                         <select name ="thesisType">  
@@ -286,27 +283,30 @@
                         </select> 
                     </div>
                     <div class="select_block"> 
-                      <label>第一作者</label>
-                      <input type="text" name="firstAuthor" >                             
+                      <label>论文作者</label>
+                      <input type="text" name="Author" >   
+
                     </div>
-                    <div class="select_block">    
-                       <label>通讯作者</label>
-                      <input type="text" name="corresAuthor"  >
-                    </div>    
+                     <div class="select_block">
+                          <label>论文题目</label>
+                          <input type="text" name="thesisTopic" >
+                      </div>
                   </div>
             
-                  <div class="condition_select">
-                     <div class="select_block">
-                          <label>论文题目(中文)</label>
-                          <input type="text" name="thesisTopicZh" >
-                      </div>
-                      <div class="select_block">
-                        <label>论文题目(英文)</label>
-                        <input type="text" name="thesisTopicEn"  >
-                      </div>
+                  <div class="condition_select">      
                      <div class="select_block">
                         <label>期刊或会议名称</label>
-                        <input type="text" name="journalName"  >
+                        <input type="text" name="journalName">
+                      </div>
+
+                      <div class="select_block">
+                        <label>CN/ISSN</label>
+                        <input type="text" name="cn"  >
+                      </div>
+
+                      <div class="select_block">
+                        <label>主办单位</label>
+                        <input type="text" name="hostUnit"  >
                       </div>
                   </div> 
                  <div class="condition_select">
@@ -318,10 +318,7 @@
                         <label>发表年份 </label>
                         <input type="text" name="publishYear" >  
                     </div>
-                    <div class="select_block">
-                        <label>卷期/页码</label>
-                        <input type="text" name="volume" >  
-                    </div>
+                    
                      <div class="select_block">
                         <label>他引频次</label>
                         <input type="text" name="quoteFrequency" >  
@@ -345,25 +342,28 @@
                      //$sql="SELECT * FROM research_project ";
 
                      $thesisType = isset($_POST["thesisType"])?$_POST["thesisType"]:"";
-                     $firstAuthor = isset($_POST["firstAuthor"])?$_POST["firstAuthor"]:"";
-                     $corresAuthor = isset($_POST["corresAuthor"])?$_POST["corresAuthor"]:"";
-                     $thesisTopicZh = isset($_POST["thesisTopicZh"])?$_POST["thesisTopicZh"]:"";
-                     $thesisTopicEn = isset($_POST["thesisTopicEn"])?$_POST["thesisTopicEn"]:"";
+                     $Author = isset($_POST["Author"])?$_POST["Author"]:"";
+                    
+                     $thesisTopic = isset($_POST["thesisTopic"])?$_POST["thesisTopic"]:"";
+                     
                      $journalName = isset($_POST["journalName"])?$_POST["journalName"]:"";
+                     $cn = isset($_POST["cn"])?$_POST["cn"]:"";
+                     $hostUnit = isset($_POST["hostUnit"])?$_POST["hostUnit"]:"";
                      $factor = isset($_POST["factor"])?$_POST["factor"]:"";
                      $publishYear = isset($_POST["publishYear"])?$_POST["publishYear"]:"";
                      $volume = isset($_POST["volume"])?$_POST["volume"]:"";
                      $quoteFrequency = isset($_POST["quoteFrequency"])?$_POST["quoteFrequency"]:"";
                     
-                    if(!empty($thesisType)&&!empty($firstAuthor)&&!empty($corresAuthor)&&!empty($thesisTopicZh)&&!empty($thesisTopicEn)&&!empty($journalName)&&!empty($factor)&&!empty($publishYear)&&!empty($volume)&&!empty($quoteFrequency))
+                    if(!empty($thesisType)&&!empty($Author)&&!empty($cn)&&!empty($thesisTopic)&&!empty($hostUnit)&&!empty($journalName)&&!empty($factor)&&!empty($publishYear)&&!empty($quoteFrequency))
                     {
                      $sql="SELECT MAX(id) FROM thesis";
                      $result = mysqli_query($mysqli,$sql);
                      $row = mysqli_fetch_array($result);
                      $id=$row[0]+1; 
                      //echo $id;
-                     $sql="INSERT INTO thesis(`id`,`thesisType`, `firstAuthor`, `corresAuthor`, `thesisTopicZh`, `thesisTopicEn`, `journalName`, `factor`, `publishYear`,`volume`,`quoteFrequency`) 
-                     VALUES ( '$id','$thesisType','$firstAuthor','$corresAuthor','$thesisTopicZh','$thesisTopicEn','$journalName','$factor','$publishYear','$volume','$quoteFrequency')"; 
+                     $sql="INSERT INTO thesis(`id`,`thesisType`, `Author`, `thesisTopic`, `journalName`, `cn`, `hostUnit`,`factor`,  `publishYear`,`quoteFrequency`) 
+                     VALUES ( '$id','$thesisType','$Author','$thesisTopic','$journalName','$cn','$hostUnit','$factor','$publishYear','$quoteFrequency')"; 
+                      echo $sql."</br>";
                       mysqli_query($mysqli,"SET NAMES UTF8");
 
                       $result = mysqli_query($mysqli,$sql); 
@@ -381,15 +381,17 @@
                              {
                               echo"<input type='hidden' name='table_name' value='thesis'>";
                                 echo"<tr><td>论文类型</td>";     
-                                echo"<td>第一作者</td>";
-                                echo"<td>通讯作者</td>";
-                                echo"<td>论文题目(中文)</td>";
-                                echo"<td>论文题目(英文)</td>";
+                                echo"<td>论文作者</td>";
+                                
+                              
+                                echo"<td>论文题目</td>";
                                 echo"<td>期刊或会议名称</td>";
+                                echo"<td>CN/ISSN</td>";
+                                echo"<td>主办单位</td>";
                                 echo"<td>影响因子</td>";
                                 
                                 echo"<td>发表年份</td>";
-                                echo"<td>卷期/页码</td>";
+                              
                                 echo"<td>他引频次</td>"; 
                                   echo"<td>管理选项<br>全 选 
 <input type='checkbox' name='selectAll' value='checkbox' onClick={selectIt('selectAll')}></td>";
@@ -399,14 +401,18 @@
                           while($row=mysqli_fetch_array($result))
                           {
                                 echo"<tr><td>".$row['thesisType']."</td>";     
-                                echo"<td>".$row['firstAuthor']."</td>";
-                                echo"<td>".$row['corresAuthor']."</td>";
-                                echo"<td>".$row['thesisTopicZh']."</td>";
-                                echo"<td>".$row['thesisTopicEn']."</td>";
+                                echo"<td>".$row['Author']."</td>";
+                              
+                                echo"<td>".$row['thesisTopic']."</td>";
+                               
                                 echo"<td>".$row['journalName']."</td>";
+                                echo"<td>".$row['cn']."</td>";
+                                echo"<td>".$row['hostUnit']."</td>";
+
+
                                 echo"<td>".$row['factor']."</td>";
                                 echo"<td>".$row['publishYear']."</td>";
-                                echo"<td>".$row['volume']."</td>";
+                               
                                 echo"<td>".$row['quoteFrequency']."</td>";
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";

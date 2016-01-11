@@ -282,10 +282,10 @@
               <?php
                 echo'样例：</br>';
                 echo'<table class="table_gen" border="1">';
-                echo'<tr><th>项目类型</th><th>项目下达部门</th><th>项目名称</th><th>项目负责人</th><th>项目组成员</th><th>项目经费</th><th>起止年限</th><th>项目状态</th></tr>';
+                echo'<tr><th>项目类型</th><th>项目下达部门</th><th>项目名称</th><th>项目负责人</th><th>项目组成员</th><th>项目经费</th><th>立项时间</th><th>验收时间</th><th>项目状态</th></tr>';
                 echo'<tr><td>国家级项目</td><td>福州大学</td><td>xx项目</td><td>张小龙</td><td>王俊强，邓雪峰，吴大飞</td><td>90万</td>
 
-                <td>2014.09-2015.12</td><td>在研</td></tr>';
+                <td>2014.09-2015.12</td><td>2014.09-2015.12</td><td>在研</td></tr>';
                 echo'</table>';
                 echo'
                 <form method="post" action="../../php/data_induce.php" " enctype="multipart/form-data">

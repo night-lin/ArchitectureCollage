@@ -230,27 +230,30 @@
                         </select> 
                     </div>
                     <div class="select_block"> 
-                      <label>第一作者</label>
-                      <input type="text" name="firstAuthor" >                             
+                      <label>论文作者</label>
+                      <input type="text" name="Author" >   
+
                     </div>
-                    <div class="select_block">    
-                       <label>通讯作者</label>
-                      <input type="text" name="corresAuthor"  >
-                    </div>    
+                     <div class="select_block">
+                          <label>论文题目</label>
+                          <input type="text" name="thesisTopic" >
+                      </div>
                   </div>
             
-                  <div class="condition_select">
-                     <div class="select_block">
-                          <label>论文题目(中文)</label>
-                          <input type="text" name="thesisTopicZh" >
-                      </div>
-                      <div class="select_block">
-                        <label>论文题目(英文)</label>
-                        <input type="text" name="thesisTopicEn"  >
-                      </div>
+                  <div class="condition_select">      
                      <div class="select_block">
                         <label>期刊或会议名称</label>
-                        <input type="text" name="journalName"  >
+                        <input type="text" name="journalName">
+                      </div>
+
+                      <div class="select_block">
+                        <label>CN/ISSN</label>
+                        <input type="text" name="cn"  >
+                      </div>
+
+                      <div class="select_block">
+                        <label>主办单位</label>
+                        <input type="text" name="hostUnit"  >
                       </div>
                   </div> 
                  <div class="condition_select">
@@ -262,10 +265,7 @@
                         <label>发表年份 </label>
                         <input type="text" name="publishYear" >  
                     </div>
-                    <div class="select_block">
-                        <label>卷期/页码</label>
-                        <input type="text" name="volume" >  
-                    </div>
+                    
                      <div class="select_block">
                         <label>他引频次</label>
                         <input type="text" name="quoteFrequency" >  
@@ -303,71 +303,24 @@
                           
                       }
 
-                    $firstAuthor = isset($_POST["firstAuthor"])?$_POST["firstAuthor"]:"";
+                    $thesisTopic = isset($_POST["thesisTopic"])?$_POST["thesisTopic"]:"";
 
-                     if(!empty($firstAuthor))
+                     if(!empty($thesisTopic))
                       {
-                        
+                         
                         $num_condition++;
                         if($num_condition==1)
                         {
-                          $sql.="WHERE firstAuthor LIKE '%$firstAuthor%'";
+                          $sql.="WHERE thesisTopic LIKE '%$thesisTopic%'";
                         }
                         else
                         {
-                           $sql.= "AND firstAuthor LIKE '%$firstAuthor%'";
+                           $sql.= "AND thesisTopic LIKE '%$thesisTopic%'";
                         }
 
                       }
-
-                       $corresAuthor = isset($_POST["corresAuthor"])?$_POST["corresAuthor"]:"";
-
-                     if(!empty($corresAuthor))
-                      {
-                        
-                        $num_condition++;
-                        if($num_condition==1)
-                        {
-                          $sql.="WHERE corresAuthor LIKE '%$corresAuthor%'";
-                        }
-                        else
-                        {
-                           $sql.= "AND corresAuthor LIKE '%$corresAuthor%'";
-                        }
-
-                      }
-                      
-                      if(!empty($thesisTopicZh))
-                      {
-                        
-                        $num_condition++;
-                        if($num_condition==1)
-                        {
-                          $sql.="WHERE thesisTopicZh LIKE '%$thesisTopicZh%'";
-                        }
-                        else
-                        {
-                           $sql.= "AND thesisTopicZh LIKE '%$thesisTopicZh%'";
-                        }
-
-                      }
-
-                      if(!empty($thesisTopicEn))
-                      {
-                        
-                        $num_condition++;
-                        if($num_condition==1)
-                        {
-                          $sql.="WHERE thesisTopicEn LIKE '%$thesisTopicEn%'";
-                        }
-                        else
-                        {
-                           $sql.= "AND thesisTopicEn LIKE '%$thesisTopicEn%'";
-                        }
-
-                      }
-
-
+                      $journalName = isset($_POST["journalName"])?$_POST["journalName"]:"";
+                        //if(empty($journalName))echo"kkkk";
                       if(!empty($journalName))
                       {
                         
@@ -378,12 +331,44 @@
                         }
                         else
                         {
-                           $sql.= "AND thesisTopicEn LIKE '%$journalName%'";
+                           $sql.= "AND journalName LIKE '%$journalName%'";
+                        }
+
+                      }
+
+                      $cn = isset($_POST["cn"])?$_POST["cn"]:"";
+                       if(!empty($cn))
+                      {
+                        
+                        $num_condition++;
+                        if($num_condition==1)
+                        {
+                          $sql.="WHERE cn LIKE '%$cn%'";
+                        }
+                        else
+                        {
+                           $sql.= "AND cn LIKE '%$cn%'";
+                        }
+
+                      }
+                       $hostUnit = isset($_POST["hostUnit"])?$_POST["hostUnit"]:"";
+                       if(!empty($hostUnit))
+                      {
+                        
+                        $num_condition++;
+                        if($num_condition==1)
+                        {
+                          $sql.="WHERE hostUnit LIKE '%$hostUnit%'";
+                        }
+                        else
+                        {
+                           $sql.= "AND hostUnit LIKE '%$hostUnit%'";
                         }
 
                       }
 
 
+                       $factor = isset($_POST["factor"])?$_POST["factor"]:"";
                       if(!empty($factor))
                       {
                         
@@ -398,7 +383,7 @@
                         }
 
                       }
-
+                          $publishYear = isset($_POST["publishYear"])?$_POST["publishYear"]:"";
                     if(!empty($publishYear))
                       {
                         
@@ -414,20 +399,7 @@
 
                       }
 
-                       if(!empty($volume))
-                      {
-                        
-                        $num_condition++;
-                        if($num_condition==1)
-                        {
-                          $sql.="WHERE volume LIKE '%$volume%'";
-                        }
-                        else
-                        {
-                           $sql.= "AND volume LIKE '%$volume%'";
-                        }
-
-                      }
+                        $quoteFrequency = isset($_POST["quoteFrequency"])?$_POST["quoteFrequency"]:"";
 
                       if(!empty($quoteFrequency))
                       {
@@ -454,15 +426,17 @@
                         if($head==0)
                              {
                                 echo"<tr><td>论文类型";     
-                                echo"<td>第一作者</td>";
-                                echo"<td>通讯作者</td>";
-                                echo"<td>论文题目(中文)</td>";
-                                echo"<td>论文题目(英文)</td>";
+                                echo"<td>论文作者</td>";
+                              
+                                echo"<td>论文题目</td>";
+                               
                                 echo"<td>期刊或会议名称</td>";
+                                echo"<td>CN/ISSN 号</td>";
+                                echo"<td>主办单位</td>";
                                 echo"<td>影响因子</td>";
                               
                                 echo"<td>发表年份</td>";
-                                echo"<td>卷期/页码</td>";
+                                
                                 echo"<td>他引频次</td>"; 
                                 echo"</td></tr>";
                                  $head = 1;
@@ -471,14 +445,16 @@
                           {
                           
                                 echo"<tr><td>".$row['thesisType']."</td>";     
-                                echo"<td>".$row['firstAuthor']."</td>";
-                                echo"<td>".$row['corresAuthor']."</td>";
-                                echo"<td>".$row['thesisTopicZh']."</td>";
-                                echo"<td>".$row['thesisTopicEn']."</td>";
+                                echo"<td>".$row['Author']."</td>";
+                               
+                                echo"<td>".$row['thesisTopic']."</td>";
+                                
                                 echo"<td>".$row['journalName']."</td>";
+                                echo"<td>".$row['cn']."</td>";
+                                echo"<td>".$row['hostUnit']."</td>";
                                 echo"<td>".$row['factor']."</td>";
                                 echo"<td>".$row['publishYear']."</td>";
-                                echo"<td>".$row['volume']."</td>";
+                              
                                 echo"<td>".$row['quoteFrequency']."</td>";
                                 
                                 echo"</td></tr>";

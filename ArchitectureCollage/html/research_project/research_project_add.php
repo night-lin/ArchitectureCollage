@@ -42,6 +42,7 @@
                 var ok6=false;
                 var ok7=false;
                 var ok8=false;
+                var ok9=false;
  
                 
                 
@@ -56,9 +57,13 @@
                   {
                     ok2=true;
                   }
-                if($('input[name="projectTime"]').val().length >= 1)
+                if($('input[name="projectStart"]').val().length >= 1)
                   {
                     ok3=true;
+                  }
+                  if($('input[name="projectCheck"]').val().length >= 1)
+                  {
+                    ok9=true;
                   }
                 if($('input[name="projectDepartment"]').val().length >= 1)
                   {
@@ -80,7 +85,7 @@
                  { 
                   ok8=true;
                 }
-                if(ok1==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true)
+                if(ok1==true&&ok9==true&&ok2==true&&ok3==true&&ok4==true&&ok5==true&&ok6==true&&ok7==true&&ok8==true)
                       $('.submit').submit();
                 else{
                         alert("添加数据时，请填写所有信息!");
@@ -259,15 +264,15 @@
             <div class="table_input_area">
              <fieldset>
               <form id="add_form"  method="post"  action="#"  enctype="multipart/form-data">
-                <div class="condition_select">
-                   <div class="select_block">
+                  <div class="condition_select">
+                    <div class="select_block">
                       <label>项目类型</label>
                         <select name ="projectType">  
                           <option value ="">未选择</option>
-                          <option value ="country"> 国家级项目</option>
-                          <option value ="province">省部级项目</option>
-                          <option value ="under_province">省部级以下</option>           
-                          <option value ="other">其他</option>           
+                          <option value ="国家级项目"> 国家级项目</option>
+                          <option value ="省部级项目">省部级项目</option>
+                          <option value ="省部级以下">省部级以下</option>           
+                          <option value ="其他">其他</option>           
                         </select> 
                     </div>
                     <div class="select_block"> 
@@ -276,44 +281,47 @@
                      
                     </div>
                     <div class="select_block">    
-                       <label>起止年限</label>
-                      <input type="text" name="projectTime"  >
+                       <label>立项时间</label>
+                      <input type="text" name="projectStart"  >
                      
-                    </div>
-                   
-                </div>
-            
-              <div class="condition_select">
-                <div class="select_block">
-                  <label>下达部门</label>
-                        <input type="text" name="projectDepartment" >
-                </div>
-                <div class="select_block">
-                <label>项目成员</label>
-                  <input type="text" name="projectMember"  >
+                    </div>    
                   </div>
-                <div class="select_block">
-
-                  <label>项目状态</label>
-                  <select name ="projectState">
-                    <option value ="">未选择</option>
-                    <option value ="on_serach"> 在研</option>
-                    <option value ="complete">结题</option> 
-                    <option value ="other">其他</option>         
-                  </select>  
-               
-                </div>
-            </div> 
-             <div class="condition_select">
-              <div class="select_block">
-                <label>项目名称</label>
-                  <input type="text" name="projectName" >
-              </div>
-              <div class="select_block">
-                  <label>项目经费</label>
-                  <input type="text" name="projectFunding" >  
+            
+                  <div class="condition_select">
+                     <div class="select_block">    
+                       <label>验收时间</label>
+                      <input type="text" name="projectCheck"  >
+                     
+                    </div>  
+                     <div class="select_block">
+                          <label>下达部门</label>
+                          <input type="text" name="projectDepartment" >
+                      </div>
+                      <div class="select_block">
+                        <label>项目成员</label>
+                        <input type="text" name="projectMember"  >
+                      </div>
+                     
+                  </div> 
+                 <div class="condition_select">
+                  <div class="select_block">
+                        <label>项目状态</label>
+                        <select name ="projectState">
+                          <option value ="">未选择</option>
+                          <option value ="在研"> 在研</option>
+                          <option value ="结题">结题</option> 
+                          <option value ="其他">其他</option>         
+                        </select>     
+                     </div>
+                    <div class="select_block">
+                      <label>项目名称</label>
+                        <input type="text" name="projectName" >
                     </div>
-               </div>   
+                    <div class="select_block">
+                        <label>项目经费</label>
+                        <input type="text" name="projectFunding" >  
+                    </div>
+                </div> 
                   
                <div style="clear:both;"></div>
                 <div class="btn-center">
@@ -349,18 +357,20 @@
                      $projectFunding = isset($_POST["projectFunding"])?$_POST["projectFunding"]:"";
                   
 
-                     $projectTime = isset($_POST["projectTime"])?$_POST["projectTime"]:"";
+                     $projectStart = isset($_POST["projectStart"])?$_POST["projectStart"]:"";
+
+                     $projectCheck = isset($_POST["projectCheck"])?$_POST["projectCheck"]:"";
                    
 
                      $projectState =  isset($_POST["projectState"])?$_POST["projectState"]:"";
-                    if(!empty($projectType)&&!empty($projectDepartment)&&!empty($projectName)&&!empty($projectMaster)&&!empty($projectMember)&&!empty($projectFunding)&&!empty($projectTime)&&!empty($projectState))
+                    if(!empty($projectType)&&!empty($projectDepartment)&&!empty($projectName)&&!empty($projectMaster)&&!empty($projectMember)&&!empty($projectFunding)&&!empty($projectStart)&&!empty($projectCheck)&&!empty($projectState))
                     {
                      $sql="SELECT MAX(id) FROM research_project";
                      $result = mysqli_query($mysqli,$sql);
                      $row = mysqli_fetch_array($result);
                      $id=$row[0]+1; 
                      //echo $id;
-                     $sql="INSERT INTO research_project(`id`,`projectType`, `projectDepartment`, `projectName`, `projectMaster`, `projectMember`, `projectFunding`, `projectTime`, `projectState`) VALUES ( '$id','$projectType','$projectDepartment','$projectName','$projectMaster','$projectMember','$projectFunding','$projectTime','$projectState')"; 
+                     $sql="INSERT INTO research_project(`id`,`projectType`, `projectDepartment`, `projectName`, `projectMaster`, `projectMember`, `projectFunding`, `projectStart`,`projectCheck`, `projectState`) VALUES ( '$id','$projectType','$projectDepartment','$projectName','$projectMaster','$projectMember','$projectFunding','$projectStart','$projectCheck','$projectState')"; 
                       mysqli_query($mysqli,"SET NAMES UTF8");
                       $result = mysqli_query($mysqli,$sql);      
                     }
@@ -381,7 +391,8 @@
                                 echo"<td>项目负责人</td>";
                                 echo"<td>项目组成员</td>";
                                 echo"<td>项目经费</td>";
-                                echo"<td>起止年限</td>";
+                                echo"<td>立项时间</td>";
+                                echo"<td>验收时间</td>";
                                 echo"<td>项目状态</td>";
                                 echo"<td>管理选项<br>全 选 
 <input type='checkbox' name='selectAll' value='checkbox' onClick={selectIt('selectAll')}></td>";
@@ -397,7 +408,8 @@
                                 echo"<td>".$row['projectMaster']."</td>";
                                 echo"<td>".$row['projectMember']."</td>";
                                 echo"<td>".$row['projectFunding']."</td>";
-                                echo"<td>".$row['projectTime']."</td>";
+                                echo"<td>".$row['projectStart']."</td>";
+                                echo"<td>".$row['projectCheck']."</td>";
                                 echo"<td>".$row["projectState"]."</td>";
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";

@@ -225,13 +225,18 @@
                      
                     </div>
                     <div class="select_block">    
-                       <label>起止年限</label>
-                      <input type="text" name="projectTime"  >
+                       <label>立项时间</label>
+                      <input type="text" name="projectStart"  >
                      
                     </div>    
                   </div>
             
                   <div class="condition_select">
+                     <div class="select_block">    
+                       <label>验收时间</label>
+                      <input type="text" name="projectCheck"  >
+                     
+                    </div>  
                      <div class="select_block">
                           <label>下达部门</label>
                           <input type="text" name="projectDepartment" >
@@ -240,7 +245,10 @@
                         <label>项目成员</label>
                         <input type="text" name="projectMember"  >
                       </div>
-                     <div class="select_block">
+                     
+                  </div> 
+                 <div class="condition_select">
+                  <div class="select_block">
                         <label>项目状态</label>
                         <select name ="projectState">
                           <option value ="">未选择</option>
@@ -249,8 +257,6 @@
                           <option value ="其他">其他</option>         
                         </select>     
                      </div>
-                  </div> 
-                 <div class="condition_select">
                     <div class="select_block">
                       <label>项目名称</label>
                         <input type="text" name="projectName" >
@@ -368,18 +374,33 @@
                         }  
                      }
 
-                     $projectTime = isset($_POST["projectTime"])?$_POST["projectTime"]:"";
-                     if(!empty($projectTime))
+                     $projectStart = isset($_POST["projectStart"])?$_POST["projectStart"]:"";
+                     if(!empty($projectStart))
                     {
                       $num_condition++;
                       
                       if($num_condition==1)
                         {
-                          $sql.="WHERE projectTime  LIKE '%$projectTime%'";
+                          $sql.="WHERE projectStart  LIKE '%$projectStart%'";
                         }
                       else
                         {
-                           $sql.= "AND projectTime  LIKE '%$projectTime%'";
+                           $sql.= "AND projectStart  LIKE '%$projectStart%'";
+                        }  
+                     }
+
+                     $projectCheck = isset($_POST["projectCheck"])?$_POST["projectCheck"]:"";
+                     if(!empty($projectStart))
+                    {
+                      $num_condition++;
+                      
+                      if($num_condition==1)
+                        {
+                          $sql.="WHERE projectCheck  LIKE '%$projectCheck%'";
+                        }
+                      else
+                        {
+                           $sql.= "AND projectCheck  LIKE '%$projectCheck%'";
                         }  
                      }
 
@@ -413,7 +434,8 @@
                                 echo"<td>项目负责人</td>";
                                 echo"<td>项目组成员</td>";
                                 echo"<td>项目经费</td>";
-                                echo"<td>起止年限</td>";
+                                echo"<td>立项时间</td>";
+                                echo"<td>验收时间</td>";
                                 echo"<td>项目状态</td>";
                                 echo"</td></tr>";
                                  $head = 1;
@@ -427,7 +449,8 @@
                                 echo"<td>".$row['projectMaster']."</td>";
                                 echo"<td>".$row['projectMember']."</td>";
                                 echo"<td>".$row['projectFunding']."</td>";
-                                echo"<td>".$row['projectTime']."</td>";
+                                echo"<td>".$row['projectStart']."</td>";
+                                echo"<td>".$row['projectCheck']."</td>";
                                 echo"<td>".$row['projectState']."</td>";
                                 echo"</td></tr>";
                                 $sum++;

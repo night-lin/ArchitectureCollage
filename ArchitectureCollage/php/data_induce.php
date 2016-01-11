@@ -37,7 +37,7 @@
         switch ($table_name) {
           case 'research_project':
           $sql = "INSERT INTO $table_name(id,projectType,projectDepartment,projectName,projectMaster,projectMember,
-          projectFunding,projectTime, projectState) VALUES('".
+          projectFunding,projectStart,projectCheck, projectState) VALUES('".
           $id."','".
           $data->sheets[0]['cells'][$i][1]."','".    
           $data->sheets[0]['cells'][$i][2]."','". 
@@ -45,11 +45,12 @@
           $data->sheets[0]['cells'][$i][4]."','". 
           $data->sheets[0]['cells'][$i][5]."','".    
           $data->sheets[0]['cells'][$i][6]."','". 
-          $data->sheets[0]['cells'][$i][7]."','".    
-          $data->sheets[0]['cells'][$i][8]."')";   
+          $data->sheets[0]['cells'][$i][7]."','".
+          $data->sheets[0]['cells'][$i][8]."','".        
+          $data->sheets[0]['cells'][$i][9]."')";   
             break;
           case 'thesis': 
-          $sql = "INSERT INTO $table_name(`id`, `thesisType`, `firstAuthor`, `corresAuthor`, `thesisTopicZh`, `thesisTopicEn`, `journalName`, `factor`, `publishYear`, `volume`, `quoteFrequency`)
+          $sql = "INSERT INTO $table_name(`id`, `thesisType`, `Author`,`thesisTopic`, `journalName`,`CN/ISSN`,`hostUnit`, `factor`, `publishYear`, `volume`, `quoteFrequency`)
           VALUES('".
           $id."','".
           $data->sheets[0]['cells'][$i][1]."','".    
