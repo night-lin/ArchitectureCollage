@@ -318,7 +318,7 @@
                         <input type="text" name="projectName" >
                     </div>
                     <div class="select_block">
-                        <label>项目经费</label>
+                        <label>项目经费（万元）</label>
                         <input type="text" name="projectFunding" >  
                     </div>
                 </div> 
@@ -390,7 +390,7 @@
                                 echo"<td>项目名称</td>";
                                 echo"<td>项目负责人</td>";
                                 echo"<td>项目组成员</td>";
-                                echo"<td>项目经费</td>";
+                                echo"<td>项目经费（万元）</td>";
                                 echo"<td>立项时间</td>";
                                 echo"<td>验收时间</td>";
                                 echo"<td>项目状态</td>";
