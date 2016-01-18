@@ -50,7 +50,8 @@
           $data->sheets[0]['cells'][$i][9]."')";   
             break;
           case 'thesis': 
-          $sql = "INSERT INTO $table_name(`id`, `thesisType`, `Author`,`thesisTopic`, `journalName`,`CN/ISSN`,`hostUnit`, `factor`, `publishYear`, `volume`, `quoteFrequency`)
+                 
+          $sql = "INSERT INTO $table_name(`id`, `thesisType`, `Author`,`thesisTopic`, `journalName`,`cn`,`hostUnit`, `factor`, `publishYear`,`quoteFrequency`)
           VALUES('".
           $id."','".
           $data->sheets[0]['cells'][$i][1]."','".    
@@ -61,8 +62,8 @@
           $data->sheets[0]['cells'][$i][6]."','". 
           $data->sheets[0]['cells'][$i][7]."','".
           $data->sheets[0]['cells'][$i][8]."','". 
-          $data->sheets[0]['cells'][$i][9]."','".    
-          $data->sheets[0]['cells'][$i][10]."')";
+           
+          $data->sheets[0]['cells'][$i][9]."')";
           break;
            case 'patent': 
              $sql = "INSERT INTO $table_name(`id`, `patentType`, `authorizeCountry`, `patentState`, `inventor`, `patentName`, `authorizeNumber`)
