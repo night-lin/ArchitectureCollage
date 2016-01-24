@@ -9,6 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
   <title>建筑学院管理系统</title>
   <script type="text/javascript" src="../../js/jquery.min.js"></script>  
+   <script type="text/javascript" src="../../js/jquery.jeditable.mini.js"></script>
+
    <script language="javascript"> 
   //设置表单全选功能
   function selectIt(action){
@@ -101,6 +103,37 @@
                  
             });
         </script>
+   <script type="text/javascript">
+$(function(){
+   $('.edit').editable('../../php/save.php', { 
+     width     :130,
+     height    :18,
+     //onblur    : "ignore",
+         cancel    : '取消',
+         submit    : '确定',
+         
+         tooltip   : '单击可以编辑...',
+     callback  : function(value, settings) {
+       $("#modifiedtime").html("刚刚");
+         }
+
+     });
+});
+//调用jquery ui的datepicker日历插件
+$.editable.addInputType('datepicker', {
+    element : function(settings, original) {
+        var input = $('<input class="input" />');
+    input.attr("readonly","readonly");
+        $(this).append(input);
+        return(input);
+    },
+    plugin : function(settings, original) {
+    var form = this;
+    $("input",this).datepicker();
+    }
+});
+</script>
+
   <script>
   //侧边栏菜单
     $(function(){
@@ -173,6 +206,7 @@
                  include_once("../../php/connect.php"); 
                  include_once("../../php/state_test.php"); 
                  $loginNumber = $_SESSION["id"];
+                  $_SESSION["table_name"][0] ='thesis';
                  header("Content-type: text/html; charset:utf-8");                 
                  $mysqli->query("set names 'utf8'");
 
@@ -381,17 +415,14 @@
                              {
                               echo"<input type='hidden' name='table_name' value='thesis'>";
                                 echo"<tr><td>论文类型</td>";     
-                                echo"<td>论文作者</td>";
-                                
-                              
+                                echo"<td>论文作者</td>";                
                                 echo"<td>论文题目</td>";
                                 echo"<td>期刊或会议名称</td>";
                                 echo"<td>CN/ISSN</td>";
                                 echo"<td>主办单位</td>";
-                                echo"<td>影响因子</td>";
-                                
+                                echo"<td>影响因子</td>";                               
                                 echo"<td>发表年份</td>";
-                              
+      
                                 echo"<td>他引频次</td>"; 
                                   echo"<td>管理选项<br>全 选 
 <input type='checkbox' name='selectAll' value='checkbox' onClick={selectIt('selectAll')}></td>";
@@ -400,20 +431,20 @@
                               }
                           while($row=mysqli_fetch_array($result))
                           {
-                                echo"<tr><td>".$row['thesisType']."</td>";     
-                                echo"<td>".$row['Author']."</td>";
+                                echo"<tr><td class='edit' id='".$row['id']."#"."thesisType'>".$row['thesisType']."</td>";     
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."Author'>".$row['Author']."</td>";
                               
-                                echo"<td>".$row['thesisTopic']."</td>";
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."thesisTopic'>".$row['thesisTopic']."</td>";
                                
-                                echo"<td>".$row['journalName']."</td>";
-                                echo"<td>".$row['cn']."</td>";
-                                echo"<td>".$row['hostUnit']."</td>";
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."journalName'>".$row['journalName']."</td>";
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."cn'>".$row['cn']."</td>";
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."hostUnit'>".$row['hostUnit']."</td>";
 
 
-                                echo"<td>".$row['factor']."</td>";
-                                echo"<td>".$row['publishYear']."</td>";
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."factor'>".$row['factor']."</td>";
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."publishYear'>".$row['publishYear']."</td>";
                                
-                                echo"<td>".$row['quoteFrequency']."</td>";
+                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."quoteFrequency'>".$row['quoteFrequency']."</td>";
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";
                                 $sum++;
@@ -425,7 +456,8 @@
             
             </table>
              <div class="btn-center">
-              <input class="btn btn-danger"  type="submit" value="删除所选数据"  >
+               <input class="btn btn-danger" name="action"  type="submit" value="删除所选数据"  >
+              <input class="btn btn-success" name="action" type="submit" value="导出所有数据"  >
              </div>
             </form>
           </br>

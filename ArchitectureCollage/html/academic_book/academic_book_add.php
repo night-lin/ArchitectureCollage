@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
   <title>建筑学院管理系统</title>
   <script type="text/javascript" src="../../js/jquery.min.js"></script> 
-
+ <script type="text/javascript" src="../../js/jquery.jeditable.mini.js"></script>
    <script language="javascript"> 
   //设置表单全选功能
   function selectIt(action){
@@ -87,6 +87,36 @@
                  
             });
         </script>
+        <script type="text/javascript">
+$(function(){
+   $('.edit').editable('../../php/save.php', { 
+     width     :130,
+     height    :18,
+     //onblur    : "ignore",
+         cancel    : '取消',
+         submit    : '确定',
+         
+         tooltip   : '单击可以编辑...',
+     callback  : function(value, settings) {
+       $("#modifiedtime").html("刚刚");
+         }
+
+     });
+});
+//调用jquery ui的datepicker日历插件
+$.editable.addInputType('datepicker', {
+    element : function(settings, original) {
+        var input = $('<input class="input" />');
+    input.attr("readonly","readonly");
+        $(this).append(input);
+        return(input);
+    },
+    plugin : function(settings, original) {
+    var form = this;
+    $("input",this).datepicker();
+    }
+});
+</script>
   <script>
   //侧边栏菜单
     $(function(){
@@ -159,6 +189,7 @@
                  include_once("../../php/connect.php"); 
                  include_once("../../php/state_test.php"); 
                  $loginNumber = $_SESSION["id"];
+                 $_SESSION["table_name"][0] ='academic_book';
                  header("Content-type: text/html; charset:utf-8");                 
                  $mysqli->query("set names 'utf8'");
 
@@ -355,13 +386,13 @@
                           while($row=mysqli_fetch_array($result))
                           {
                                echo"<input type='hidden' name='table_name' value='academic_book'>";
-                                echo"<tr><td>".$row['author']."</td>";     
-                                echo"<td>".$row['bookName']."</td>";
-                                echo"<td>".$row['bookCategory']."</td>";
-                                echo"<td>".$row['publishUnit']."</td>";
-                                echo"<td>".$row['bookNumber']."</td>";
-                                 echo"<td>".$row['publishDate']."</td>";
-                                echo"<td>".$row['subjectCategory']."</td>";
+                                echo"<tr><td class='edit'  id='".$row['id']."#"."author'>".$row['author']."</td>";     
+                                echo"<td class='edit'  id='".$row['id']."#"."bookName'>".$row['bookName']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."bookCategory'>".$row['bookCategory']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."publishUnit'>".$row['publishUnit']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."bookNumber'>".$row['bookNumber']."</td>";
+                                 echo"<td class='edit'  id='".$row['id']."#"."publishDate'>".$row['publishDate']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."subjectCategory'>".$row['subjectCategory']."</td>";
                                
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";
@@ -382,7 +413,8 @@
             
             </table>
              <div class="btn-center">
-              <input class="btn btn-danger"  type="submit" value="删除所选数据"  >
+              <input class="btn btn-danger" name="action"  type="submit" value="删除所选数据"  >
+              <input class="btn btn-success" name="action" type="submit" value="导出所有数据"  >
              </div>
             </form>
           </br>

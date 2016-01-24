@@ -235,13 +235,13 @@ p.completed-warning{margin-left: 8%; font-size: 20px;color: #26B15B; }
 	font-family: "微软雅黑";
   
 }
-.condition_select label{font-size: 14px; display: inline-block; width: 100px;text-align: right;}
+.condition_select label{font-size: 14px; display: inline-block; width: 120px;text-align: right;}
 .condition_select select{min-width: 100px;}
 #btn-condition{width: 120px;  margin-top: 20px; margin-bottom: 10px;}
 #result_p{margin-left:auto;margin-right: auto;display: block;width: 100px;}
 #result_num{color:#F31C04;}
 
-.condition_select{float: left;display: inline-block; width: 30%;min-width: 280px;}
+.condition_select{float: left;display: inline-block; width: ;min-width: 280px;}
 .select_block{margin-top: 20px; }
 .fr{float: right}
 .fl{float:left}
