@@ -214,7 +214,7 @@
                   <div class="condition_select">
                    <div class="select_block"> 
                     <label>奖励级别</label>       
-                      <select name="awardCategory	">
+                      <select name="awardCategory">
                       <option value="">未选择</option> 
                       <option value="国家级一等">国家级一等</option>
                       <option value="国家级二等">国家级二等</option>  
@@ -249,33 +249,34 @@
                      $num_condition = 0;
                      $sql="SELECT * FROM award_situation";
 
-                     $awardCategory	 = isset($_POST["awardCategory	"])?$_POST["awardCategory	"]:"";
-                     if(!empty($awardCategory	))
+                     $awardCategory	 = isset($_POST["awardCategory"])?$_POST["awardCategory"]:"";
+                     if(!empty($awardCategory))
                       {
                        
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.=" WHERE awardCategory	 ='$awardCategory	'";
+                            $sql.=" WHERE awardCategory	 LIKE '%$awardCategory%'";
                           }
                         else
                         {
-                           $sql.="  AND awardCategory	 ='$awardCategory	'";
+                           $sql.="  AND awardCategory	 LIKE '%$awardCategory%'";
                         }
                           
                       }
 
+                      $awardName  = isset($_POST["awardName"])?$_POST["awardName"]:"";
                        if(!empty($awardName))
                       {
                        
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.=" WHERE awardName  ='$awardName'";
+                            $sql.=" WHERE awardName LIKE '%$awardName%'";
                           }
                         else
                         {
-                           $sql.="  AND awardName  ='$awardName'";
+                           $sql.="  AND awardName  LIKE '%$awardName%'";
                         }
                           
                       }
@@ -284,7 +285,7 @@
                     
                       mysqli_query($mysqli,"SET NAMES UTF8");
                       $head = 0;
-                     // echo $sql."</br>";
+                     //echo $sql."</br>";
                       $result = mysqli_query($mysqli,$sql);
                       $sum = 0;
                       if(mysqli_num_rows($result)>0)

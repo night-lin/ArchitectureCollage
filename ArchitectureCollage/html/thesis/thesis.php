@@ -220,11 +220,11 @@
                           <option value ="EI检索">EI检索</option>
                           <option value =" SSCI"> SSCI</option>           
                           <option value ="A＆HCI">A＆HCI</option>
-                          <option value ="一类核心期刊(A1、A2)">一类核心期刊（A1、A2）</option>
-                          <option value ="二类核心期刊(B1、B2)">二类核心期刊(B1、B2)</option>
+                          <option value ="一类核心期刊">一类核心期刊</option>
+                          <option value ="二类核心期刊">二类核心期刊</option>
                           <option value ="中文核心期刊">中文核心期刊</option>
                           <option value ="一般期刊">一般期刊</option>
-                          <option value ="国际会议论文集(ISTP)">国际会议论文集（ISTP）</option>
+                          <option value ="国际会议论文集">国际会议论文集</option>
                           <option value ="国内会议论文集">国内会议论文集</option>
                           <option value ="其它相关学科"> 其它相关学科</option>            
                         </select> 
@@ -302,6 +302,24 @@
                         }
                           
                       }
+
+                      $Author = isset($_POST["Author"])?$_POST["Author"]:"";
+                     if(!empty($Author))
+                      {
+                       
+                        $num_condition++;
+                        if($num_condition==1)
+                          {
+                            $sql.="WHERE Author LIKE '%$Author%'";
+                          }
+                        else
+                        {
+                           $sql.="AND Author LIKE '%$Author%'";
+                        }
+                          
+                      }
+
+
 
                     $thesisTopic = isset($_POST["thesisTopic"])?$_POST["thesisTopic"]:"";
 

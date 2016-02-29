@@ -265,11 +265,11 @@
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.=" WHERE organizationName ='$organizationName'";
+                            $sql.=" WHERE organizationName  LIKE '%$organizationName%'";
                           }
                         else
                         {
-                           $sql.="AND organizationName ='$organizationName'";
+                           $sql.="AND organizationName LIKE'%$organizationName%'";
                         }
                           
                       }
@@ -346,12 +346,14 @@
                       {
                         if($head==0)
                              {
-                                echo"<tr><td>学术团体名称</td>";     
+                                echo"<tr><td>学术团体名称</td>";   
+                                echo"<td>担任职务</td>";  
                                 echo"<td>姓名</td>";
+                                echo"<td>单位职务、职称</td>";
                                 echo"<td>批准时间</td>";
                               
-                                echo"<td>担任职务</td>";
-                                echo"<td>单位职务</td>";
+                                
+                                
                                 echo"</td></tr>";
                                  $head = 1;
                               }

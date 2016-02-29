@@ -278,11 +278,11 @@
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.=" WHERE platformCategory ='$platformCategory'";
+                            $sql.=" WHERE platformCategory LIKE '%$platformCategory%'";
                           }
                         else
                         {
-                           $sql.="  AND platformCategory ='$platformCategory'";
+                           $sql.="  AND platformCategory LIKE '%$platformCategory%'";
                         }
                           
                       }

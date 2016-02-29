@@ -216,6 +216,7 @@ $.editable.addInputType('datepicker', {
                  {
                     $row = mysqli_fetch_array($result);
                     $GLOBALS['name']=$row['name'];
+                   $GLOBALS['power']=$row['power'];
                   }
                 
             ?>
@@ -424,6 +425,7 @@ $.editable.addInputType('datepicker', {
                                 echo"<td>发表年份</td>";
       
                                 echo"<td>他引频次</td>"; 
+                                 if($power==0)
                                   echo"<td>管理选项<br>全 选 
 <input type='checkbox' name='selectAll' value='checkbox' onClick={selectIt('selectAll')}></td>";
                                 echo"</td></tr>";
@@ -445,6 +447,7 @@ $.editable.addInputType('datepicker', {
                                 echo"<td class='edit' class='edit'  id='".$row['id']."#"."publishYear'>".$row['publishYear']."</td>";
                                
                                 echo"<td class='edit' class='edit'  id='".$row['id']."#"."quoteFrequency'>".$row['quoteFrequency']."</td>";
+                                if($power==0)
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";
                                 $sum++;
@@ -456,7 +459,11 @@ $.editable.addInputType('datepicker', {
             
             </table>
              <div class="btn-center">
-               <input class="btn btn-danger" name="action"  type="submit" value="删除所选数据"  >
+              <?php
+              if($power==0)
+                echo'
+              <input class="btn btn-danger" name="action"  type="submit" value="删除所选数据"  >'
+              ?>
               <input class="btn btn-success" name="action" type="submit" value="导出所有数据"  >
              </div>
             </form>

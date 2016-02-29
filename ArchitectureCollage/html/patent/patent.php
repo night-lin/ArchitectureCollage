@@ -355,7 +355,7 @@
                        
                       if($num_condition==1)
                         {
-                          $sql.="WHERE authorizeNumber  LIKE '%$authorizeNumber%'";
+                          $sql.=" WHERE authorizeNumber  LIKE '%$authorizeNumber%'";
                         }
                       else
                         {
@@ -367,7 +367,7 @@
                       
                       mysqli_query($mysqli,"SET NAMES UTF8");
                       $head = 0;
-                      //echo $sql."</br>";
+                   //   echo $sql."</br>";
                       $result = mysqli_query($mysqli,$sql);
                       $sum = 0;
                       if(mysqli_num_rows($result)>0)

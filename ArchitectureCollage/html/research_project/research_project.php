@@ -213,9 +213,10 @@
                       <label>项目类型</label>
                         <select name ="projectType">  
                           <option value ="">未选择</option>
-                          <option value ="国家级项目"> 国家级项目</option>
-                          <option value ="省部级项目">省部级项目</option>
-                          <option value ="省部级以下">省部级以下</option>           
+                          <option value ="国家级"> 国家级</option>
+                          <option value ="省级">省级</option>
+                          <option value ="省部级以下">省部级以下</option>
+                          <option value ="校级">校级</option>                
                           <option value ="其他">其他</option>           
                         </select> 
                     </div>
@@ -289,11 +290,13 @@
                         $num_condition++;
                         if($num_condition==1)
                           {
-                            $sql.="WHERE projectType ='$projectType'";
+                            $sql.="WHERE projectType LIKE '%$projectType%'";
+                            
                           }
                         else
                         {
-                           $sql.="AND projectType ='$projectType'";
+                           $sql.="AND projectType LIKE '%$projectType%'";
+
                         }
                           
                       }
@@ -390,7 +393,7 @@
                      }
 
                      $projectCheck = isset($_POST["projectCheck"])?$_POST["projectCheck"]:"";
-                     if(!empty($projectStart))
+                     if(!empty($projectCheck))
                     {
                       $num_condition++;
                       

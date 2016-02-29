@@ -199,7 +199,10 @@ $.editable.addInputType('datepicker', {
                  {
                     $row = mysqli_fetch_array($result);
                     $GLOBALS['name']=$row['name'];
+                    $GLOBALS['power']=$row['power'];
                   }
+
+
                 
             ?>
             <a class="a_exit" href="../../">退出系统</a>
@@ -378,6 +381,7 @@ $.editable.addInputType('datepicker', {
                                 echo"<td>书号</td>";
                                 echo"<td>出版日期</td>";
                                 echo"<td>学科分类</td>";
+                                 if($power==0)
                                echo"<td>管理选项<br>全 选 
 <input type='checkbox' name='selectAll' value='checkbox' onClick={selectIt('selectAll')}></td>";
                                 echo"</td></tr>";
@@ -393,7 +397,7 @@ $.editable.addInputType('datepicker', {
                                 echo"<td class='edit'  id='".$row['id']."#"."bookNumber'>".$row['bookNumber']."</td>";
                                  echo"<td class='edit'  id='".$row['id']."#"."publishDate'>".$row['publishDate']."</td>";
                                 echo"<td class='edit'  id='".$row['id']."#"."subjectCategory'>".$row['subjectCategory']."</td>";
-                               
+                                if($power==0)
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";
                                 $sum++;
@@ -413,8 +417,13 @@ $.editable.addInputType('datepicker', {
             
             </table>
              <div class="btn-center">
-              <input class="btn btn-danger" name="action"  type="submit" value="删除所选数据"  >
+              <?php
+              if($power==0)
+                echo'
+              <input class="btn btn-danger" name="action"  type="submit" value="删除所选数据"  >'
+              ?>
               <input class="btn btn-success" name="action" type="submit" value="导出所有数据"  >
+              
              </div>
             </form>
           </br>

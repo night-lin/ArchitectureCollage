@@ -7,7 +7,7 @@ $_SESSION["menu_item"] = "project_research";
 $pwd = $_POST["login-password"];
 $jud = 0;
 	echo"<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>";
-	$result = mysqli_query($mysqli,"SELECT * FROM user");
+	$result = mysqli_query($mysqli,"SELECT * FROM user WHERE loginNumber ='$name'");
 	if(mysqli_num_rows($result)>0)
 	while($row = mysqli_fetch_array($result))
 	{

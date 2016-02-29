@@ -75,7 +75,7 @@ a.a_success:hover,a.a_success:active
 }
 #status2{position: absolute;top:39px;left: 220px; height: 38px; font-size: 12px;
 	text-indent:40px;line-height: 38px;border-bottom: 1px solid #ffffff;}
-#main-content{ min-height: 600px;}
+#main-content{ min-height: 600px;background-color: #eeeeee}
 #sider{ font-family: "微软雅黑"; min-height: 600px; width: 220px;
 background-color:#2b4c6b;float: left;font-size: 14px;}
 
@@ -199,7 +199,7 @@ margin-top:30px;font-size: 13px; margin-left: 20%; }
 #change_submit_r{ position: relative;margin-left:20%; margin-right: auto; margin-top: 40px;}
 /*选课界面*/
 #btn-clse{ font-family: "微软雅黑"; font-size: 14px; padding: 10px;margin-top: 20px; position: relative; margin-left: 20%; margin-right: auto;}
-#status1 span{ color: #fff;}
+#status1 span{ color:#FFF902;}
 /*管理员界面*/
 #st-info-m{ margin-left: 0;}
 #st-info-m1{ margin-left: 20%;}
