@@ -442,6 +442,7 @@ $.editable.addInputType('datepicker', {
                               }
                           while($row=mysqli_fetch_array($result))
                           {
+                            if($power==0){
                                echo"<input type='hidden' name='table_name' value='research_project'>";
                                 echo"<tr><td class='edit'  id='".$row['id']."#"."projectType'>".$row["projectType"]."</td>";     
                                 echo"<td class='edit' id='".$row['id']."#"."projectDepartment'>".$row['projectDepartment']."</td>";
@@ -452,6 +453,20 @@ $.editable.addInputType('datepicker', {
                                 echo"<td class='edit' id='".$row['id']."#"."projectStart'>".$row['projectStart']."</td>";
                                 echo"<td class='edit' id='".$row['id']."#"."projectCheck'>".$row['projectCheck']."</td>";
                                 echo"<td class='edit' id='".$row['id']."#"."projectState'>".$row["projectState"]."</td>";
+                              }
+                                else if($power==1)
+                                {
+                                 echo"<input type='hidden' name='table_name' value='research_project'>";
+                                echo"<tr><td class='edit'  id='".$row['id']."#"."projectType'>".$row["projectType"]."</td>";     
+                                echo"<td  id='".$row['id']."#"."projectDepartment'>".$row['projectDepartment']."</td>";
+                                echo"<td  id='".$row['id']."#"."projectName'>".$row['projectName']."</td>";
+                                echo"<td  id='".$row['id']."#"."projectMaster'>".$row['projectMaster']."</td>";
+                                echo"<td  id='".$row['id']."#"."projectMember'>".$row['projectMember']."</td>";
+                                echo"<td  id='".$row['id']."#"."projectFunding'>".$row['projectFunding']."</td>";
+                                echo"<td  id='".$row['id']."#"."projectStart'>".$row['projectStart']."</td>";
+                                echo"<td  id='".$row['id']."#"."projectCheck'>".$row['projectCheck']."</td>";
+                                echo"<td  id='".$row['id']."#"."projectState'>".$row["projectState"]."</td>";
+                                }
                                if($power==0)
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";

@@ -424,6 +424,7 @@ $.editable.addInputType('datepicker', {
                               }
                           while($row=mysqli_fetch_array($result))
                           {
+                            if($power==0){
                                echo"<input type='hidden' name='table_name' value='science_platform'>";
                                 echo"<tr><td class='edit'  id='".$row['id']."#"."platformCategory'>".$row['platformCategory']."</td>";     
                                 echo"<td class='edit'  id='".$row['id']."#"."platformName'>".$row['platformName']."</td>";
@@ -432,6 +433,18 @@ $.editable.addInputType('datepicker', {
                                 echo"<td class='edit'  id='".$row['id']."#"."contractTime'>".$row['contractTime']."</td>";
                                 echo"<td class='edit'  id='".$row['id']."#"."cooperFunds'>".$row['cooperFunds']."</td>";
                                 echo"<td class='edit'  id='".$row['id']."#"."cooperOrganization'>".$row['cooperOrganization']."</td>";
+                              }
+                              else if($power==1)
+                                {
+                                  echo"<input type='hidden' name='table_name' value='science_platform'>";
+                                echo"<tr><td id='".$row['id']."#"."platformCategory'>".$row['platformCategory']."</td>";     
+                                echo"<td id='".$row['id']."#"."platformName'>".$row['platformName']."</td>";
+                                echo"<td id='".$row['id']."#"."platformMaster'>".$row['platformMaster']."</td>";
+                                echo"<td id='".$row['id']."#"."cooperUnit'>".$row['cooperUnit']."</td>";
+                                echo"<td id='".$row['id']."#"."contractTime'>".$row['contractTime']."</td>";
+                                echo"<td id='".$row['id']."#"."cooperFunds'>".$row['cooperFunds']."</td>";
+                                echo"<td id='".$row['id']."#"."cooperOrganization'>".$row['cooperOrganization']."</td>";
+                                }
                                if($power==0)
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";

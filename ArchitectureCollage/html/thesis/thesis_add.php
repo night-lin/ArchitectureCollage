@@ -433,20 +433,39 @@ $.editable.addInputType('datepicker', {
                               }
                           while($row=mysqli_fetch_array($result))
                           {
+                             if($power==0){
                                 echo"<tr><td class='edit' id='".$row['id']."#"."thesisType'>".$row['thesisType']."</td>";     
-                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."Author'>".$row['Author']."</td>";
+                                echo"<td class='edit'   id='".$row['id']."#"."Author'>".$row['Author']."</td>";
                               
-                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."thesisTopic'>".$row['thesisTopic']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."thesisTopic'>".$row['thesisTopic']."</td>";
                                
-                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."journalName'>".$row['journalName']."</td>";
-                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."cn'>".$row['cn']."</td>";
-                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."hostUnit'>".$row['hostUnit']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."journalName'>".$row['journalName']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."cn'>".$row['cn']."</td>";
+                                echo"<td class='edit'   id='".$row['id']."#"."hostUnit'>".$row['hostUnit']."</td>";
 
 
-                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."factor'>".$row['factor']."</td>";
-                                echo"<td class='edit' class='edit'  id='".$row['id']."#"."publishYear'>".$row['publishYear']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."factor'>".$row['factor']."</td>";
+                                echo"<td class='edit'  id='".$row['id']."#"."publishYear'>".$row['publishYear']."</td>";
                                
                                 echo"<td class='edit' class='edit'  id='".$row['id']."#"."quoteFrequency'>".$row['quoteFrequency']."</td>";
+                                }
+                                else if($power==1)
+                                {
+                                echo"<tr><td class='edit' id='".$row['id']."#"."thesisType'>".$row['thesisType']."</td>";     
+                                echo"<td  id='".$row['id']."#"."Author'>".$row['Author']."</td>";
+                              
+                                echo"<td  id='".$row['id']."#"."thesisTopic'>".$row['thesisTopic']."</td>";
+                               
+                                echo"<td  id='".$row['id']."#"."journalName'>".$row['journalName']."</td>";
+                                echo"<td  id='".$row['id']."#"."cn'>".$row['cn']."</td>";
+                                echo"<td  id='".$row['id']."#"."hostUnit'>".$row['hostUnit']."</td>";
+
+
+                                echo"<td id='".$row['id']."#"."factor'>".$row['factor']."</td>";
+                                echo"<td  id='".$row['id']."#"."publishYear'>".$row['publishYear']."</td>";
+                               
+                                echo"<td  id='".$row['id']."#"."quoteFrequency'>".$row['quoteFrequency']."</td>";
+                                }
                                 if($power==0)
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";

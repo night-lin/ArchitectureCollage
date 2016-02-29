@@ -360,12 +360,23 @@ $.editable.addInputType('datepicker', {
                               }
                           while($row=mysqli_fetch_array($result))
                           {
-                               echo"<input type='hidden' name='table_name' value='academic_position'>";
-                                 echo"<tr><td class='edit' id='".$row['id']."#"."organizationName'>".$row['organizationName']."</td>";     
+                             if($power==0){
+                                echo"<input type='hidden' name='table_name' value='academic_position'>";
+                                echo"<tr><td class='edit' id='".$row['id']."#"."organizationName'>".$row['organizationName']."</td>";     
                                 echo"<td class='edit' id='".$row['id']."#"."position'>".$row['position']."</td>";
                                 echo"<td class='edit' id='".$row['id']."#"."name'>".$row['name']."</td>";
                                 echo"<td class='edit' id='".$row['id']."#"."unitPosition'>".$row['unitPosition']."</td>";
                                 echo"<td class='edit' id='".$row['id']."#"."approvalTime'>".$row['approvalTime']."</td>";
+                              }
+                              else if($power==1)
+                                {
+                                    echo"<input type='hidden' name='table_name' value='academic_position'>";
+                                echo"<tr><td id='".$row['id']."#"."organizationName'>".$row['organizationName']."</td>";     
+                                echo"<td id='".$row['id']."#"."position'>".$row['position']."</td>";
+                                echo"<td id='".$row['id']."#"."name'>".$row['name']."</td>";
+                                echo"<td id='".$row['id']."#"."unitPosition'>".$row['unitPosition']."</td>";
+                                echo"<td id='".$row['id']."#"."approvalTime'>".$row['approvalTime']."</td>";
+                                }
                               if($power==0)
                                
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";

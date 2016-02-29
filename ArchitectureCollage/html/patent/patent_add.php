@@ -394,6 +394,7 @@ $.editable.addInputType('datepicker', {
                               }
                           while($row=mysqli_fetch_array($result))
                           {
+                                if($power==0){
                                echo"<input type='hidden' name='table_name' value='patent'>";
                                  echo"<tr><td class='edit'  id='".$row['id']."#"."patentType'>".$row['patentType']."</td>";     
                                 echo"<td class='edit'  id='".$row['id']."#"."authorizeCountry'>".$row['authorizeCountry']."</td>";
@@ -401,6 +402,17 @@ $.editable.addInputType('datepicker', {
                                 echo"<td class='edit'  id='".$row['id']."#"."inventor'>".$row['inventor']."</td>";
                                 echo"<td class='edit'  id='".$row['id']."#"."patentName'>".$row['patentName']."</td>";
                                 echo"<td class='edit'  id='".$row['id']."#"."authorizeNumber'>".$row['authorizeNumber']."</td>";
+                              }
+                               else if($power==1)
+                                {
+                                  echo"<input type='hidden' name='table_name' value='patent'>";
+                                 echo"<tr><td id='".$row['id']."#"."patentType'>".$row['patentType']."</td>";     
+                                echo"<td   id='".$row['id']."#"."authorizeCountry'>".$row['authorizeCountry']."</td>";
+                                echo"<td   id='".$row['id']."#"."patentState'>".$row['patentState']."</td>";
+                                echo"<td   id='".$row['id']."#"."inventor'>".$row['inventor']."</td>";
+                                echo"<td  id='".$row['id']."#"."patentName'>".$row['patentName']."</td>";
+                                echo"<td   id='".$row['id']."#"."authorizeNumber'>".$row['authorizeNumber']."</td>";
+                                }
                                if($power==0)
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";

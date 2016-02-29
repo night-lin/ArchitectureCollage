@@ -339,9 +339,17 @@ $.editable.addInputType('datepicker', {
                               }
                           while($row=mysqli_fetch_array($result))
                           {
+                               if($power==0){
                                echo"<input type='hidden' name='table_name' value='award_situation'>";
                                 echo"<tr><td class='edit'  id='".$row['id']."#"."awardCategory'>".$row['awardCategory']."</td>";     
                                 echo"<td class='edit'  id='".$row['id']."#"."awardName'>".$row['awardName']."</td>";
+                               }
+                               else if($power==1)
+                                {
+                                echo"<input type='hidden' name='table_name' value='award_situation'>";
+                                echo"<tr><td id='".$row['id']."#"."awardCategory'>".$row['awardCategory']."</td>";     
+                                echo"<td  id='".$row['id']."#"."awardName'>".$row['awardName']."</td>";
+                                }
                                if($power==0)
                                 echo"<td>删除<input type='checkbox' name='delete_data[]' value='".$row['id']."'></td>";
                                 echo"</td></tr>";
